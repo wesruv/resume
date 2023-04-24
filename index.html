@@ -2,7 +2,7 @@
 <html class="no-js" lang="">
 <head>
   <meta charset="utf-8">
-  <title>Scorekeeper</title>
+  <title>Wes Ruvalcaba - Resume</title>
   <!-- <meta name="description" content=""> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,35 +15,36 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-
-  <meta name="theme-color" content="#fafafa">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="theme-color" content="#b3e4f3">
 </head>
 
 <body>
   <main class="resume-wrapper">
-    <header>
+    <header class="resume-wrapper__header">
       <h1>wesruv</h1>
-      <div class="header__name">Wes Ruvlacaba</div>
+      <div class="header__name">Wes Ruvalcaba</div>
       <ul class="header__contact">
         <li><a href="http://wesruv.com">wesruv.com</a></li>
-        <li><a href="mailto://wes@wesruv.com">wes@wesruv.com</a></li>
-        <li><a class="icon icon--github" href="https://github.com/wesruv">Github</a></li>
-        <li><a class="icon icon--codepen" href="https://https://codepen.io/wesruv">Codepen</a></li>
+        <li><a href="mailto://wes@gmail.com">wes@gmail.com</a></li>
+        <li class="social-link social-link--github"><a class="icon icon--github" href="https://github.com/wesruv">Github</a></li>
+        <li class="social-link social-link--codepen"><a class="icon icon--codepen" href="https://https://codepen.io/wesruv">Codepen</a></li>
       </ul>
     </header>
     <div class="resume-wrapper__content">
-      <h2>Employment</h2>
-      <ol class="experience-list">
+      <h2 id="experience-list__heading--employment">Employment</h2>
+      <ol class="experience-list" aria-labelledby="experience-list__heading--employment">
         <li>
           <section>
-            <h3>
+            <h3 id="experience-item__heading--rh-pse">
               <strong class="experience-list__title">Principal Software Engineer</strong>
               <span class="experience-list__date"><time datetime="2021-01">2022</time> - Present</span>
+              <div class="experience-list__employer">Red Hat</div>
             </h3>
-            <div class="experience-list__employer">Red Hat</div>
-            <ul>
+            <ul class="experience-list__list" aria-labelledby="experience-item__heading--rh-pse">
               <li>Lead Product Documentation Replatforming project</li>
-              <li>Served as a Drupal and Front-end Architecture SME for projects</li>
+              <li>Served as a Drupal and Front-end Architecture <abbr title="subject matter expert">SME</abbr> for projects</li>
               <li>Created and maintained shared projects, including:
                 <ul>
                   <li>Internal web components including site navigation component used on all sites</li>
@@ -56,16 +57,16 @@
 
         <li>
           <section>
-            <h3>
+            <h3 id="experience-item__heading--rh-sfed">
               <strong class="experience-list__title">Senior Front-end Developer</strong>
               <span class="experience-list__date">
                 <time datetime="2020-01">2020</time>
                 -
                 <time datetime="2021-12">2021</time>
               </span>
+              <div class="experience-list__employer">Red Hat</div>
             </h3>
-            <div class="experience-list__employer">Red Hat</div>
-            <ul>
+            <ul class="experience-list__list" aria-labelledby="experience-item__heading--rh-sfed">
               <li>Created a navigation web component that is used on all Red Hat web sites that enforces branding, accessibility, analytics, and consistent functionality across all web properties</li>
               <li>Responsible support, documentation, training, and communication of the shared navigation component for other teams</li>
               <li>Worked to eliminate backlogs of technical debt in code and build</li>
@@ -78,16 +79,16 @@
 
         <li>
           <section>
-            <h3>
+            <h3 id="experience-item__heading--lb-sfed">
               <strong class="experience-list__title">Senior Front-end Developer</strong>
               <span class="experience-list__date">
                 <time datetime="2016-09">2016</time>
                 -
                 <time datetime="2019-12">2019</time>
               </span>
+              <div class="experience-list__employer">Lullabot</div>
             </h3>
-            <div class="experience-list__employer">Lullabot</div>
-            <ul>
+            <ul class="experience-list__list" aria-labelledby="experience-item__heading--lb-sfed">
               <li>Lead front-end development of large-scale web projects, including: Carnegie Mellon University School of Computer Science (CMU SCS), AIChE.org, and SpaceX.com</li>
               <li>Responsible for scoping, scheduling and management of ongoing project work across 17 websites for CMU SCS, while serving as primary client contact</li>
               <li>Consult with clients regarding best practices for content strategy, as well as architecting front- and back-end functionality</li>
@@ -100,16 +101,16 @@
 
         <li>
           <section>
-            <h3>
+            <h3 id="experience-item__heading--lb-fed">
               <strong class="experience-list__title">Front-end Developer</strong>
               <span class="experience-list__date">
                 <time datetime="2014-08">2014</time>
                 -
                 <time datetime="2016-09">2016</time>
               </span>
+              <div class="experience-list__employer">Lullabot</div>
             </h3>
-            <div class="experience-list__employer">Lullabot</div>
-            <ul>
+            <ul class="experience-list__list" aria-labelledby="experience-item__heading--lb-fed">
               <li>Front-end development of large scale websites, including BravoTV.com, Oxygen.com, and SpaceX.com</li>
               <li>Led front-end rebuild of Oxygen.com</li>
               <li>Helped rebuild Lullabot.com with React front-end</li>
@@ -119,16 +120,16 @@
 
         <li>
           <section>
-            <h3>
+            <h3 id="experience-item__heading--hfc-lwd">
               <strong class="experience-list__title">Lead Web Designer</strong>
               <span class="experience-list__date">
                 <time datetime="2013-08">2013</time>
                 -
                 <time datetime="2014-05">2014</time>
               </span>
+              <div class="experience-list__employer">Highlights for Children</div>
             </h3>
-            <div class="experience-list__employer">Highlights for Children</div>
-            <ul>
+            <ul class="experience-list__list" aria-labelledby="experience-item__heading--hfc-lwd">
               <li>Led UX, UI design, front-end development, and content data structure standards and direction for Highlights and its subsidiaries</li>
               <li>Led major web projects and initiatives, including 2 rebuilds/redesigns</li>
               <li>Trained team on technologies and processes (Drupal API, Vagrant, Git, Linux CLI)</li>
@@ -139,16 +140,16 @@
 
         <li>
           <section>
-            <h3>
+            <h3 id="experience-item__heading--hfc-mmws">
               <strong class="experience-list__title">Manager of Marketing Web Services</strong>
               <span class="experience-list__date">
                 <time datetime="2012-03">2012</time>
                 -
                 <time datetime="2013-08">2013</time>
               </span>
+              <div class="experience-list__employer">Highlights for Children</div>
             </h3>
-            <div class="experience-list__employer">Highlights for Children</div>
-            <ul>
+            <ul class="experience-list__list" aria-labelledby="experience-item__heading--hfc-mmws">
               <li>Managed team of 3 developers, 2 designers and 1 email specialist, our team was responsible for all Highlights websites and 2 subsidiaries</li>
               <li>Worked with UX firm to create plan to combine 5 Highlights web properties</li>
               <li>Directed major redesign and migration for Highlights.com, combining five Highlights web properties into a single site</li>
@@ -165,16 +166,16 @@
 
         <li>
           <section>
-            <h3>
+            <h3 id="experience-item__heading--hfc-wdd">
               <strong class="experience-list__title">Web Designer & Developer</strong>
               <span class="experience-list__date">
                 <time datetime="2010-05">2010</time>
                 -
                 <time datetime="2012-03">2012</time>
               </span>
+              <div class="experience-list__employer">Highlights for Children</div>
             </h3>
-            <div class="experience-list__employer">Highlights for Children</div>
-            <ul>
+            <ul class="experience-list__list" aria-labelledby="experience-item__heading--hfc-wdd">
               <li>Lead designer & front-end developer for the Highlights web team</li>
               <li>Managed large projects including a redesign of Highlights.com and 3 other sites</li>
               <li>Authored documentation for the content management system (CMS), front-end development processes, and web style guidelines</li>
@@ -185,7 +186,7 @@
 
         <li>
           <section>
-            <h3>
+            <h3 id="experience-item__heading--ccad-ai">
               <strong class="experience-list__title">Adjunct Instructor</strong>
               <span class="experience-list__date">
                 <time datetime="2007-08">2007</time>
@@ -196,9 +197,9 @@
                 -
                 <time datetime="2010-06">2013</time>
               </span>
+              <div class="experience-list__employer">Highlights for Children</div>
             </h3>
-            <div class="experience-list__employer">Highlights for Children</div>
-            <ul>
+            <ul class="experience-list__list" aria-labelledby="experience-item__heading--ccad-ai">
               <li>Illustration Portfolio - Taught students how to create a website, résumé and portfolio</li>
               <li>Web Design I - Basics of HTML, CSS and interactive design</li>
               <li>Web Design II - Flash, HTML, CSS and interactive design</li>
@@ -207,11 +208,11 @@
         </li>
       </ol>
 
-      <h2>Giving Back</h2>
-      <ol class="experience-list">
+      <h2 id="experience-list__heading--giving-back">Giving Back</h2>
+      <ol class="experience-list" aria-labelledby="experience-list__heading--giving-back">
         <li>
           <section>
-            <h3>
+            <h3 id="experience-item__heading--speaking">
               <strong class="experience-list__title">Speaking & Training</strong>
               <span class="experience-list__date">
                 <time datetime="2012">2013</time>
@@ -219,7 +220,7 @@
                 <time datetime="2020">2020</time>
               </span>
             </h3>
-            <ul>
+            <ul class="experience-list__list" aria-labelledby="experience-item__heading--speaking">
               <li>Authored and presented full day Intermediate/Advanced CSS training at 6+ events across the US for 110+ attendees</li>
               <li>Presented sessions at DrupalCon North America (Los Angeles, Baltimore, Nashville, & Seattle) and DrupalCon Europe (Vienna)</li>
               <li>Given talks at 10+ events in the US and Europe</li>
@@ -228,7 +229,7 @@
         </li>
         <li>
           <section>
-            <h3>
+            <h3 id="experience-item__heading--bpmc">
               <strong class="experience-list__title">Backdrop Project Management Commitee</strong>
               <span class="experience-list__date">
                 <time datetime="2017">2017</time>
@@ -236,64 +237,212 @@
                 <time datetime="2020">2020</time>
               </span>
             </h3>
-            <ul>
+            <ul class="experience-list__list" aria-labelledby="experience-item__heading--bpmc">
               <li>Help manage direction and major decisions for Backdrop, the FOSS fork of Drupal</li>
               <li>Contributed 3 major projects to the core project and authored multiple FOSS extensions</li>
             </ul>
           </section>
         </li>
       </ol>
+
+      <h2 id="experience-list__heading--education">Education</h2>
+      <ol class="experience-list" aria-labelledby="experience-list__heading--education">
+        <li>
+          <section>
+            <h3 id="experience-item__heading--ccad">
+              <strong class="experience-list__title">Bachelor of Fine Arts - Illustration</strong>
+              <div class="experience-list__employer">Columbus College of Art and Design</div>
+            </h3>
+        </li>
+      </ol>
     </div>
     <aside class="resume-wrapper__sidebar">
-      <h2>Skills</h2>
-      <h3 id="skills__web-dev">Web Development</h3>
-      <ul aria-labelledby="skills__web-dev">
-        <li>CSS & Sass <input value="4" type="range" disabled min="0" max="4" ></li>
-        <li>HTML <input value="4" type="range" disabled min="0" max="4" ></li>
-        <li>Javascript <input value="3.5" type="range" disabled min="0" max="4" ></li>
-        <li>Linux CLI <input value="3" type="range" disabled min="0" max="4" ></li>
-        <li>PHP <input value="2" type="range" disabled min="0" max="4" ></li>
+      <h2 class="sr-only">Skills</h2>
+      <h3 class="skills__heading" id="skills__web-dev">Web Development</h3>
+      <ul class="skills__list" aria-labelledby="skills__web-dev">
+        <li>
+          CSS & Sass
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
+        <li>
+          HTML
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
+        <li>
+          Javascript
+          <span class="skill__level skill__level--advanced">
+            Advanced (3 out of 4)
+          </span>
+        </li>
+        <li>
+          Linux CLI
+          <span class="skill__level skill__level--advanced">
+            Advanced (3 out of 4)
+          </span>
+        </li>
+        <li>
+          PHP
+          <span class="skill__level skill__level--proficient">
+            Proficient (2 out of 4)
+          </span>
+        </li>
       </ul>
 
-      <h3 id="skills__apis">APIs & Tools</h3>
-      <ul aria-labelledby="skills__apis">
-        <li>Node & NPM <input value="4" type="range" disabled min="0" max="3" ></li>
-        <li>Drupal <input value="4" type="range" disabled min="0" max="4" ></li>
-        <li>PHP <input value="2" type="range" disabled min="0" max="4" ></li>
-        <li>React <input value="2" type="range" disabled min="0" max="4" ></li>
-        <li>Vue <input value="2" type="range" disabled min="0" max="4" ></li>
+      <h3 class="skills__heading" id="skills__apis">APIs & Tools</h3>
+      <ul class="skills__list" aria-labelledby="skills__apis">
+        <li>
+          Drupal
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
+        <li>
+          Node & NPM
+          <span class="skill__level skill__level--advanced">
+            Advanced (3 out of 4)
+          </span>
+        </li>
+        <li>
+          PHP
+          <span class="skill__level skill__level--proficient">
+            Proficient (2 out of 4)
+          </span>
+        </li>
+        <li>
+          React
+          <span class="skill__level skill__level--proficient">
+            Proficient (2 out of 4)
+          </span>
+        </li>
+        <li>
+          Vue
+          <span class="skill__level skill__level--proficient">
+            Proficient (2 out of 4)
+          </span>
+        </li>
       </ul>
 
-      <h3 id="skills__expertise">Expertise</h3>
-      <ul aria-labelledby="skills__expertise">
-        <li>Progressive <abbr title="enhancement">En.</abbr> <input value="4" type="range" disabled min="0" max="3" ></li>
-        <li>User Experience <input value="4" type="range" disabled min="0" max="4" ></li>
-        <li>Front-end Performance <input value="3" type="range" disabled min="0" max="4" ></li>
-        <li>Accessibility <input value="3" type="range" disabled min="0" max="4" ></li>
-        <li>Analytics <input value="3" type="range" disabled min="0" max="4" ></li>
+      <h3 class="skills__heading" id="skills__expertise">Expertise</h3>
+      <ul class="skills__list" aria-labelledby="skills__expertise">
+        <li>
+          Progressive Enhancement
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
+        <li>
+          User Experience
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
+        <li>
+          Front-end Performance
+          <span class="skill__level skill__level--advanced">
+            Advanced (3 out of 4)
+          </span>
+        </li>
+        <li>
+          Accessibility
+          <span class="skill__level skill__level--advanced">
+            Advanced (3 out of 4)
+          </span>
+        </li>
+        <li>
+          Analytics
+          <span class="skill__level skill__level--advanced">
+            Advanced (3 out of 4)
+          </span>
+        </li>
       </ul>
 
-      <h3 id="skills__mgmt">Management Experience</h3>
-      <ul aria-labelledby="skills__mgmt">
-        <li>Worflow & Process <input value="4" type="range" disabled min="0" max="3" ></li>
-        <li>Training/Mentoring <input value="4" type="range" disabled min="0" max="4" ></li>
-        <li>Kan Ban <input value="3" type="range" disabled min="0" max="4" ></li>
-        <li>Web Dev Projects <input value="4" type="range" disabled min="0" max="4" ></li>
-        <li>Web Design Projects <input value="3" type="range" disabled min="0" max="4" ></li>
-        <li>Team <input value="3" type="range" disabled min="0" max="4" ></li>
+      <h3 class="skills__heading" id="skills__mgmt">Management Experience</h3>
+      <ul class="skills__list" aria-labelledby="skills__mgmt">
+        <li>
+          Worflow & Process
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
+        <li>
+          Training/Mentoring
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
+        <li>
+          Web Dev Projects
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
+        <li>
+          Web Design Projects
+          <span class="skill__level skill__level--proficient">
+            Proficient (2 out of 4)
+          </span>
+        </li>
+        <li>
+          Kan Ban
+          <span class="skill__level skill__level--advanced">
+            Advanced (3 out of 4)
+          </span>
+        </li>
+        <li>
+          Team
+          <span class="skill__level skill__level--advanced">
+            Advanced (3 out of 4)
+          </span>
+        </li>
       </ul>
 
-      <h3 id="skills__tools">Preferred Tools</h3>
-      <ul aria-labelledby="skills__tools">
-        <li>VS Code <input value="4" type="range" disabled min="0" max="3" ></li>
-        <li>Git CLI <input value="4" type="range" disabled min="0" max="4" ></li>
-        <li>Jira/<abbr title="github">GH</abbr> Issues <input value="4" type="range" disabled min="0" max="4" ></li>
-        <li>Sheets/Excel <input value="3" type="range" disabled min="0" max="4" ></li>
-        <li>Figma <input value="2" type="range" disabled min="0" max="4" ></li>
-        <li>Photoshop/Illustrator <input value="4" type="range" disabled min="0" max="4" ></li>
+      <h3 class="skills__heading" id="skills__tools">Preferred Tools</h3>
+      <ul class="skills__list" aria-labelledby="skills__tools">
+        <li>
+          VS Code
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
+        <li>
+          Git CLI
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
+        <li>
+          <span>Jira/<abbr title="GitHub">GH</abbr> Issues</span>
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
+        <li>
+          Sheets/Excel
+          <span class="skill__level skill__level--advanced">
+            Advanced (3 out of 4)
+          </span>
+        </li>
+        <li>
+          Figma
+          <span class="skill__level skill__level--proficient">
+            Proficient (2 out of 4)
+          </span>
+        </li>
+        <li>
+          Photoshop/Illustrator
+          <span class="skill__level skill__level--expert">
+            Expert (4 out of 4)
+          </span>
+        </li>
       </ul>
     </aside>
   </main>
   <!-- <script src="js/main.js" type="module"></script> -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
 </body>
 </html>
