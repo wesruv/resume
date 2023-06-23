@@ -256,6 +256,7 @@ video {
 
 .experience-list__date {
   font-size: 1.25em;
+  color: var(--accent);
 }
 
 .experience-list__employer {
@@ -281,12 +282,12 @@ video {
   top: 0.75em;
   left: -1em;
   display: block;
-  width: 4px;
-  height: 4px;
+  width: 0.25em;
+  height: 0.25em;
   box-sizing: content-box;
   background: var(--accent--light);
-  border-radius: 50%;
-  transform: translate(0, -3px);
+  /* border-radius: 50%; */
+  transform: skew(12deg) translate(0, -3px);
 }
 
 .experience-list__list ul {
