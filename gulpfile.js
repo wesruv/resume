@@ -86,13 +86,13 @@ const reloadBrowserSync = (done) => {
 
 const watchSrc = () => {
   watch(['css/*', 'css/**/*'], reloadBrowserSync)
-  watch(['src/js/*', 'src/js/**/*'], series(buildJs, reloadBrowserSync));
+  // watch(['src/js/*', 'src/js/**/*'], series(buildJs, reloadBrowserSync));
 }
 
-exports.build = series(buildJs);
+// exports.build = series(buildJs);
 
 exports.start = series(
-  buildJs,
+  // buildJs,
   startBrowserSync,
   watchSrc
 );
