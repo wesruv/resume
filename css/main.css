@@ -438,8 +438,8 @@ video {
 .icon:before {
   content: '';
   position: absolute;
-  top: 0.25rem;
-  left: 0.25rem;
+  top: 50%;
+  left: 50%;
   display: block;
   width: 2rem;
   height: 2rem;
@@ -450,6 +450,7 @@ video {
   -webkit-mask-position: center center;
   mask-position: center center;
   background: currentColor;
+  transform: translate(-50%, -50%);
 }
 
 .icon--email:before {
@@ -460,14 +461,14 @@ video {
 
 .icon--github:before {
   /* Vertically center icon */
-  transform: translateY(-1px);
+  transform: translate(-50%, -50%) translateY(-1px);
   -webkit-mask-image: url('../img/github.svg');
   mask-image: url('../img/github.svg');
 }
 
 .icon--codepen:before {
   /* Vertically center icon */
-  transform: translateY(-1px);
+  transform: translate(-50%, -50%) translateY(-1px);
   -webkit-mask-image: url('../img/codepen.svg');
   mask-image: url('../img/codepen.svg');
 }
