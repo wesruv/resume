@@ -530,13 +530,16 @@ abbr[title] {
 /****************************
  * Resume Content
  */
-.resume-wrapper__content {
+.resume-wrapper__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
   padding-top: var(--header__marginBottom, 2rem);
   padding-right: var(--page__padding-inline, 1.25rem);
   padding-left: var(--page__padding-inline, 1.25rem);
 }
 @media (min-width: 75em) {
-  .resume-wrapper__content {
+  .resume-wrapper__content-wrapper {
     grid-column: 1 / span 2;
     padding-right: 3em;
     border-right: 1px solid var(--border__color);
@@ -544,7 +547,7 @@ abbr[title] {
 }
 
 /* Section headings */
-.resume-wrapper__content h2,
+.resume-wrapper__content-wrapper h2,
 .resume-wrapper__sidebar h3{
   margin: 0 0 1em;
   padding: 0;
@@ -561,14 +564,15 @@ abbr[title] {
 }
 
 .experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 li:has(.experience-list__more[aria-expanded]) {
-  margin-bottom: 3em;
-
   ~ li {
     display: none;
   }
@@ -625,42 +629,53 @@ li:has(.experience-list__more[aria-expanded="true"]) {
   }
 }
 
-.experience-list h3 {
-  margin: 0;
-  padding: 0;
-  font: inherit;
+.experience-list {
+  h3,
+  h4 {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+  }
 }
 
 .experience-list__date {
   display: block;
   font-size: 1.25em;
   color: var(--accent);
-}
-@media (min-width: 44em) {
-  .experience-list__date {
+  @media (min-width: 44em) {
     display: inline-block;
     margin-left: 0.25em;
+  }
+
+  h4 & {
+    font-size: 1em;
   }
 }
 
 .experience-list__employer {
   margin-bottom: 0.25em;
+  color: var(--accent);
+  font-weight: bold;
 }
 
-.experience-list__list {
-  margin: 0 0 2em;
+.experience-list__details,
+.experience-item__description {
+  margin: 0;
+}
+
+.experience-list__details {
   padding-left: 1.5em;
   list-style: none;
 }
 
-.experience-list__list li {
+.experience-list__details li {
   position: relative;
   margin: 0 0 0.25em;
   padding: 0;
   line-height: 1.5;
 }
 
-.experience-list__list li:before {
+.experience-list__details li:before {
   content: '';
   position: absolute;
   top: 0.75em;
@@ -674,13 +689,13 @@ li:has(.experience-list__more[aria-expanded="true"]) {
   transform: skew(12deg) translate(0, -3px);
 }
 
-.experience-list__list ul {
+.experience-list__details ul {
   margin: 0;
   padding: 0.25em 0 0 1.25em;
   list-style: none;
 }
 
-.experience-list__list ul li:before {
+.experience-list__details ul li:before {
   border: 1px solid var(--accent--light);
   background: transparent;
 }
@@ -689,6 +704,22 @@ li:has(.experience-list__more[aria-expanded="true"]) {
   margin: 0;
   padding: 0;
   font-size: 1.5em;
+  line-height: 1.4;
+}
+
+.experience-list__subsection {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 0.5em 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-list__subtitle {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25em;
   line-height: 1.4;
 }
 
@@ -986,7 +1017,7 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     content: 'wesruv@gmail.com';
   }
 
-  .resume-wrapper__content {
+  .resume-wrapper__content-wrapper {
     grid-column: 1 / span 2;
     padding-right: 3em;
     border-right: 1px solid var(--border__color);
@@ -1009,7 +1040,7 @@ li:has(.experience-list__more[aria-expanded="true"]) {
   }
 
   .skill__level,
-  .experience-list__list li:before,
+  .experience-list__details li:before,
   .icon:before {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;

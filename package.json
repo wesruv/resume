@@ -1,18 +1,15 @@
 {
-  "name": " ",
+  "name": "wes-resume",
   "version": "0.0.1",
   "description": "",
   "keywords": "",
   "license": "",
   "author": "",
   "scripts": {
-    "tsc": "tsc",
-    "gulp": "gulp",
-    "start": "gulp"
+    "browser-sync": "browser-sync",
+    "start": "browser-sync start -s --files '**/*.html, **/*.css, **/*.js' --index='index.html' --port 2099"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.11",
-    "gulp": "^4.0.2",
-    "gulp-typescript": "^6.0.0-alpha.1"
+    "browser-sync": "^2.27.11"
   }
 }
