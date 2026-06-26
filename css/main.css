@@ -177,27 +177,12 @@ abbr[title] {
   }
 }
 
-@-webkit-keyframes slideInDown {
-  from {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 @keyframes slideInDown {
   from {
-    -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
     opacity: 0;
   }
   to {
-    -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
   }
@@ -211,7 +196,6 @@ abbr[title] {
   z-index: 10;
   display: flex;
   padding: 0 var(--resume-wrapper__padding-inline);
-  -webkit-animation: slideInDown 0.25s ease forwards;
   animation: slideInDown 0.25s ease forwards;
   @media (min-width: 80em) {
     left: calc(
@@ -219,7 +203,6 @@ abbr[title] {
     );
   }
   @media (prefers-reduced-motion: reduce) {
-    -webkit-animation: none;
     animation: none;
   }
 }
@@ -270,9 +253,7 @@ abbr[title] {
   height: calc(100% + 1px);
   background: var(--accent) 35%;
   box-shadow: 0.5em 0 0 var(--accent--light);
-  -webkit-transform: skewX(12deg) translate(calc(var(--page__padding-inline) * -7));
   transform: skewX(12deg) translate(calc(var(--page__padding-inline) * -7));
-  -webkit-transform-origin: left bottom;
   transform-origin: left bottom;
 }
 
@@ -289,7 +270,6 @@ abbr[title] {
     right: calc(50vw + 32rem);
     left: auto;
     height: 80px;
-    -webkit-transform: none;
     transform: none;
   }
 }
@@ -309,7 +289,6 @@ abbr[title] {
   display: block;
   width: calc(var(--page__padding-inline) * 7);
   height: calc(100% + 1px);
-  -webkit-transform: translate(calc(var(--page__padding-inline) * -9));
   transform: translate(calc(var(--page__padding-inline) * -9));
   background-image: linear-gradient(to right, var(--font__color) 30%, transparent 100%);
 }
@@ -443,6 +422,7 @@ abbr[title] {
     &::before {
       width: 1.5em;
       width: 1.5em;
+      -webkit-mask-size: contain;
       mask-size: contain;
     }
   }
@@ -519,7 +499,6 @@ abbr[title] {
   -webkit-mask-position: center center;
   mask-position: center center;
   background: currentColor;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -531,7 +510,6 @@ abbr[title] {
 
 .icon--github::before {
   /* Vertically center icon */
-  -webkit-transform: translate(-50%, -50%) translateY(-1px);
   transform: translate(-50%, -50%) translateY(-1px);
   -webkit-mask-image: url('../img/github.svg');
   mask-image: url('../img/github.svg');
@@ -539,7 +517,6 @@ abbr[title] {
 
 .icon--codepen::before {
   /* Vertically center icon */
-  -webkit-transform: translate(-50%, -50%) translateY(-1px);
   transform: translate(-50%, -50%) translateY(-1px);
   -webkit-mask-image: url('../img/codepen.svg');
   mask-image: url('../img/codepen.svg');
@@ -635,11 +612,8 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     border-top: 0.2em solid var(--accent--light--text);
     border-right: 0.2em solid var(--accent--light--text);
     box-shadow: inset -0.05em 0.05em 0 var(--accent--light);
-    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    transition: -webkit-transform 0.25s;
     transition: transform 0.25s;
-    transition: transform 0.25s, -webkit-transform 0.25s;
   }
 
   /* It's been processed by JS */
@@ -651,7 +625,6 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     background: var(--active-element__background);
 
     &:before {
-      -webkit-transform: rotate(135deg);
       transform: rotate(135deg);
     }
   }
@@ -713,7 +686,6 @@ li:has(.experience-list__more[aria-expanded="true"]) {
   width: 0.25em;
   height: 0.25em;
   background: var(--accent--light);
-  -webkit-transform: skew(12deg) translate(0, -3px);
   transform: skew(12deg) translate(0, -3px);
 }
 
@@ -830,7 +802,6 @@ li:has(.experience-list__more[aria-expanded="true"]) {
   border-radius: 0.75rem;
   background: #fff5;
   box-shadow: inset 0 0 0 2px var(--accent--secondary);
-  -webkit-transform: skewX(-12deg);
   transform: skewX(-12deg);
 }
 
@@ -1032,7 +1003,6 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     width: 1.5em;
     height: 1.5em;
     margin-right: 0.25em;
-    -webkit-transform: none;
     transform: none;
   }
   .header__social .icon::after {
@@ -1097,4 +1067,3 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     padding-left: 2em;
   }
 }
-
