@@ -19,9 +19,8 @@
   /* Contextual */
   --surface__background: var(--font__color);
   --font__color: var(--font__color--base);
-}
-@media (min-width: 44em) {
-  :root {
+
+  @media (min-width: 44em) {
     --page__padding-inline: 1.25rem;
     --header__marginBottom: 3rem;
     --resume-wrapper__padding-inline: 1.5rem;
@@ -52,14 +51,12 @@ body {
   font-size: 1em;
   background: var(--surface__background);
   color: var(--font__color);
-}
-@media (min-width: 48em) {
-  body {
+
+  @media (min-width: 48em) {
     font-size: 1.25em;
   }
-}
-@media (min-width: 44em) {
-  body {
+
+  @media (min-width: 44em) {
     font-size: 1.25em;
   }
 }
@@ -124,9 +121,8 @@ abbr[title] {
   padding: 0 var(--resume-wrapper__padding-inline) 3.5em;
   color: var(--font__color);
   background: var(--surface__background);
-}
-@media (min-width: 75em) {
-  .resume-wrapper {
+
+  @media (min-width: 75em) {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -148,15 +144,13 @@ abbr[title] {
   padding: 0 var(--page__padding-inline);
   border-bottom: 1px solid var(--border__color);
   background-color: #fff;
-}
-@media (min-width: 35em) {
-  .resume-wrapper__header {
+
+  @media (min-width: 35em) {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 1em;
   }
-}
-@media (min-width: 44em) {
-  .resume-wrapper__header {
+
+  @media (min-width: 44em) {
     display: grid;
     grid-template-rows: 1fr -webkit-min-content -webkit-min-content;
     grid-template-rows: 1fr min-content min-content;
@@ -164,9 +158,8 @@ abbr[title] {
     grid-template-columns: min-content 1fr;
     row-gap: 0;
   }
-}
-@media (min-width: 57em) {
-  .resume-wrapper__header {
+
+  @media (min-width: 57em) {
     display: grid;
     grid-template-rows: 1fr -webkit-min-content;
     grid-template-rows: 1fr min-content;
@@ -213,31 +206,26 @@ abbr[title] {
 .resume-wrapper__header::before {
   grid-row: 1 / span 1;
   grid-column: 1 / span 1;
-}
-@media (min-width: 44em) {
-  .wordmark,
-  .resume-wrapper__header::before {
+
+  @media (min-width: 44em) {
     grid-row: 1 / span 3;
   }
 }
 
 .resume-wrapper__header::before {
   grid-column: 1;
-}
-@media (min-width: 35em) {
-  .resume-wrapper__header::before {
+
+  @media (min-width: 35em) {
     grid-row: 1 / span 1;
     grid-column: 1 / span 2;
   }
-}
-@media (min-width: 44em) {
-  .resume-wrapper__header::before {
+
+  @media (min-width: 44em) {
     grid-row: 1 / span 3;
     grid-column: 1 / span 1;
   }
-}
-@media (min-width: 57em) {
-  .resume-wrapper__header::before {
+
+  @media (min-width: 57em) {
     grid-row: 1 / span 2;
   }
 }
@@ -317,14 +305,12 @@ abbr[title] {
   font-size: 2em;
   line-height: 1;
   color: #fff;
-}
-@media (min-width: 44em) {
-  .wordmark {
+
+  @media (min-width: 44em) {
     font-size: 3em;
   }
-}
-@media (min-width: 57em) {
-  .wordmark {
+
+  @media (min-width: 57em) {
     grid-row: 1 / span 2;
   }
 }
@@ -549,9 +535,8 @@ abbr[title] {
   padding-top: var(--header__marginBottom, 2rem);
   padding-right: var(--page__padding-inline, 1.25rem);
   padding-left: var(--page__padding-inline, 1.25rem);
-}
-@media (min-width: 75em) {
-  .resume-wrapper__content-wrapper {
+
+  @media (min-width: 75em) {
     grid-column: 1 / span 2;
     padding-right: 3em;
     border-right: 1px solid var(--border__color);
@@ -737,17 +722,15 @@ li:has(.experience-list__more[aria-expanded="true"]) {
   padding-top: var(--header__marginBottom, 2rem);
   padding-right: var(--page__padding-inline, 1.25rem);
   padding-left: var(--page__padding-inline, 1.25rem);
-}
-@media (min-width: 57em) {
-  .resume-wrapper__sidebar {
+
+  @media (min-width: 57em) {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2em;
     padding-left: 2rem;
   }
-}
-@media (min-width: 75em) {
-  .resume-wrapper__sidebar {
+
+  @media (min-width: 75em) {
     display: block;
   }
 }
@@ -766,9 +749,8 @@ li:has(.experience-list__more[aria-expanded="true"]) {
   border-top: 3px solid var(--accent);
   font-size: 1.25em;
   color: var(--accent);
-}
-@media (min-width: 75em) {
-  .sidebar__heading {
+
+  @media (min-width: 75em) {
     overflow: hidden;
     height: 0;
     margin: 0;
@@ -883,11 +865,9 @@ li:has(.experience-list__more[aria-expanded="true"]) {
 
 /*******************************************************
  * Print styles.
- * Inlined to avoid the additional HTTP request:
- * https://www.phpied.com/delay-loading-your-print-css/
  */
-@media print {
-  :root {
+ :root {
+  @media print {
     --font__color--base: #000;
     --page__padding-inline: 0rem;
     --header__marginBottom: 3rem;
@@ -895,48 +875,66 @@ li:has(.experience-list__more[aria-expanded="true"]) {
 
     font-size: 7pt;
   }
+}
 
-  body {
+body {
+  @media print {
     background: transparent;
     color: var(--font__color--base);
   }
+}
 
-  a,
-  a:visited {
+a,
+a:visited {
+  @media print {
     text-decoration: underline;
   }
+}
 
-  a[href]::after {
+a[href]::after {
+  @media print {
     content: ' (' attr(href) ')';
   }
+}
 
-  abbr[title]::after {
+abbr[title]::after {
+  @media print {
     content: ' (' attr(title) ')';
   }
+}
 
-  p,
-  h2,
-  h3 {
+p,
+h2,
+h3 {
+  @media print {
     orphans: 3;
     widows: 3;
   }
+}
 
-  h2,
-  h3 {
+h2,
+h3 {
+  @media print {
     page-break-after: avoid;
   }
+}
 
-  .skills,
-  .experience-list > li {
+.skills,
+.experience-list > li {
+  @media print {
     page-break-inside: avoid;
   }
+}
 
-  .resume-wrapper {
+.resume-wrapper {
+  @media print {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
 
-  .resume-wrapper__header {
+.resume-wrapper__header {
+  @media print {
     position: relative;
     display: grid;
     grid-template-rows: 1fr -webkit-min-content;
@@ -947,47 +945,63 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     align-items: center;
     overflow: hidden;
   }
+}
 
-  .resume-wrapper__header::before,
-  .resume-wrapper__header::after {
+.resume-wrapper__header::before,
+.resume-wrapper__header::after {
+  @media print {
     content: none;
   }
+}
 
-  .wordmark,
-  .header__name {
+.wordmark,
+.header__name {
+  @media print {
     padding-top: 3rem;
   }
+}
 
-  .wordmark {
+.wordmark {
+  @media print {
     grid-row: 1 / span 2;
     height: 100%;
     color: var(--font__color);
   }
-  .wordmark span {
+}
+.wordmark span {
+  @media print {
     background: transparent;
   }
+}
 
-  .wordmark::before {
+.wordmark::before {
+  @media print {
     content: '';
   }
+}
 
-  .header__name {
+.header__name {
+  @media print {
     grid-row: 1 / span 1;
     grid-column: 2;
     height: 100%;
     padding-left: 2rem;
     border: 0;
   }
+}
 
-  .header__name rt {
+.header__name rt {
+  @media print {
     display: inline-block;
     visibility: visible;
     margin-left: 0.75em;
     color: inherit;
     font-weight: 400;
   }
+}
 
-  .header__social {
+.header__social {
+  @media print {
     justify-self: end;
     flex-wrap: wrap;
     grid-column: 3;
@@ -995,8 +1009,10 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     gap: 0.75em;
     font-size: 0.8em;
   }
+}
 
-  .header__social .icon {
+.header__social .icon {
+  @media print {
     display: flex;
     overflow: visibile;
     width: auto;
@@ -1004,64 +1020,88 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     border-radius: 0;
     text-decoration: none;
   }
+}
 
-  .header__social .icon::before {
+.header__social .icon::before {
+  @media print {
     position: static;
     width: 1.5em;
     height: 1.5em;
     margin-right: 0.25em;
     transform: none;
   }
-  .header__social .icon::after {
+}
+.header__social .icon::after {
+  @media print {
     content: attr(href);
     display: block;
     text-indent: 0;
   }
+}
 
-  .header__social .icon--email::after {
+.header__social .icon--email::after {
+  @media print {
     content: 'wesruv@gmail.com';
   }
+}
 
-  .resume-wrapper__content-wrapper {
+.resume-wrapper__content-wrapper {
+  @media print {
     grid-column: 1 / span 2;
     padding-right: 3em;
     border-right: 1px solid var(--border__color);
   }
+}
 
-  .experience-list__date {
+.experience-list__date {
+  @media print {
     display: inline;
   }
+}
 
-  li:has(.experience-list__more) {
+li:has(.experience-list__more) {
+  @media print {
     display: none;
   }
+}
 
-  .sidebar__heading {
+.sidebar__heading {
+  @media print {
     display: none;
   }
+}
 
-  .skills__list > li {
+.skills__list > li {
+  @media print {
     margin-bottom: 1em;
   }
+}
 
-  .skill__level,
-  .experience-list__details li::before,
-  .icon::before {
+.skill__level,
+.experience-list__details li::before,
+.icon::before {
+  @media print {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
+}
 
-  .skill__level {
+.skill__level {
+  @media print {
     position: relative;
     overflow: visible;
     box-shadow: inset 0 0 0 0.1em var(--accent--secondary);
   }
+}
 
-  .skill__level::before {
+.skill__level::before {
+  @media print {
     margin: 0.25em;
   }
+}
 
-  .skill__level::after {
+.skill__level::after {
+  @media print {
     content: attr(title);
     position: absolute;
     top: 100%;
@@ -1069,8 +1109,10 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     display: block;
     font-size: 0.75em;
   }
+}
 
-  .resume-wrapper__sidebar {
+.resume-wrapper__sidebar {
+  @media print {
     padding-left: 2em;
   }
 }
