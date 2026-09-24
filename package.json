@@ -7,7 +7,7 @@
   "author": "",
   "scripts": {
     "browser-sync": "browser-sync",
-    "start": "browser-sync start -s --files '**/*.html, **/*.css, **/*.js' --index='index.html' --port 2099"
+    "start": "browser-sync start -s --files '**/*.html, **/*.css, **/*.js' --index='index.html' --port 2099 --no-ui"
   },
   "devDependencies": {
     "browser-sync": "^2.27.11"

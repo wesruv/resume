@@ -1,0 +1,485 @@
+.page__header-wrapper {
+  --surface__background: #D3FFCF;
+
+  display: flex;
+  flex-direction: column;
+  padding-block: 0;
+  padding-inline: var(--page__padding-inline);
+  background: var(--surface__background);
+
+  @media (min-width: 35em) {
+    --total-rows: 3;
+
+    display: grid;
+    grid-template-rows: 1fr min-content 1fr;
+    grid-auto-rows: min-content;
+    /* First col is 300px, measured in browser */
+    grid-template-columns: 18.75rem 1fr;
+  }
+  @media (min-width: 57em) {
+    --total-rows: 4;
+
+    grid-template-rows: 1fr 3rem min-content 1fr;
+    grid-template-columns: repeat(3, minmax(0, 26em));
+    gap: 1em;
+  }
+  @media (min-width: 75em) {
+    grid-template-columns: 1fr repeat(3, minmax(0, 26em)) 1fr;
+  }
+
+  &::before {
+    @media (min-width: 35em) {
+      content: '';
+      position: relative;
+      z-index: 0;
+      width: 150%;
+      grid-row: 1 / span var(--total-rows);
+      grid-column: 1;
+      align-self: stretch;
+      justify-self: end;
+      border-right-width: 1.25em;
+      transform: skewX(12deg);
+      transform-origin: right bottom;
+    }
+    @media (min-width: 75em) {
+      grid-column: 1 / span 2;
+      border-right-width: 1.25em;
+      transform: translate(1vw) skewX(12deg);
+    }
+  }
+
+  /* Make sure bottom white space doesn't collapse */
+  &::after {
+    @media (min-width: 57em) {
+      content: '';
+      display: block;
+      grid-column: 1 / -1;
+      grid-row: 4;
+      min-height: 3em;
+    }
+  }
+}
+
+.page__header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 0;
+  padding-inline: 0;
+  @media (min-width: 35em) {
+    grid-row: 1 / span var(--total-rows);
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-template-columns: subgrid;
+    gap: 1em;
+    height: 100vh;
+    max-height: 45vw; /* Measured in browser */
+  }
+  @media (min-width: 57em) {
+  }
+  @media (min-width: 75em) {
+    grid-column: 2 / -2;
+    max-height: 41vw; /* Measured in browser */
+  }
+}
+
+.wordmark {
+  position: relative;
+  grid-row: 1;
+  grid-column: 1;
+  font-size: 2em;
+  @media (min-width: 75em) {
+    font-size: 3em;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 150%;
+    align-self: stretch;
+    justify-self: end;
+    border-right-width: 0.25em;
+    transform: skewX(12deg);
+    transform-origin: right bottom;
+    @media (min-width: 35em) {
+      content: none;
+    }
+  }
+
+  span {
+    /* To convince automated a11y tools the bg color can have white text */
+    background: var(--c-accent);
+  }
+}
+
+.header__nav {
+  font-size: 1rem;
+  @media (min-width: 35em) {
+    grid-row: 3;
+    grid-column: 2 / span 2;
+  }
+  @media (min-width: 57em) {
+    grid-row: 2;
+    grid-column:  2 / span 2;
+    align-self: center;
+  }
+  @media (min-width: 75em) {
+    font-size: 1.25rem;
+  }
+}
+
+.header__social {
+  align-self: baseline;
+  @media (min-width: 35em) {
+    justify-self: end;
+    grid-row: 1;
+    grid-column: 2;
+  }
+  @media (min-width: 57em) {
+    grid-column: 3;
+  }
+}
+
+.page--home__header__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-size: 1.25rem;
+  padding-top: 2em;
+  @media (min-width: 35em) {
+    grid-row: 2;
+    grid-column: 2 / span 2;
+    padding: 0;
+  }
+  @media (min-width: 57em) {
+    grid-row: 3;
+    font-size: 2rem;
+  }
+  @media (min-width: 85em) {
+    font-size: 3rem;
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 1.333em;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 200;
+    line-height: 1.25;
+  }
+}
+
+.image--geetar {
+  --image-aspect-ratio: 1065 / 1379;
+  --mask-size: 4em;
+
+  position: relative;
+  z-index: 0;
+  width: calc(100% + var(--page__padding-inline) * 2);
+  padding-top: 4em;
+  background: var(--c-accent);
+  mask-image: url(../img/wave-fill.svg);
+  mask-size: var(--mask-size);
+  mask-position: center top;
+  mask-repeat: repeat-x;
+  @media (min-width: 35em) {
+    grid-row: 2 / span 3;
+    grid-column: 1;
+    aspect-ratio: var(--image-aspect-ratio);
+    width: auto;
+    height: 100%;
+    padding: 0;
+    align-self: end;
+    justify-self: end;
+    /* Measured in browser */
+    margin-right: 3rem;
+    mask: none;
+    background: none;
+  }
+  @media (min-width: 57em) {
+    /* Measured in browser */
+    margin-right: 6vw;
+  }
+  @media (min-width: 75em) {
+    margin-right: 4vw;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    aspect-ratio: var(--image-aspect-ratio);
+    background-image: url(../img/infaltable-geetar-electric-green.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+    background-position: right bottom;
+    @media (min-width: 35em) {
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--mask-size);
+    background: var(--c-accent--light);
+    mask-image: url(../img/wave-chonky-border.svg);
+    mask-size: var(--mask-size);
+    mask-position: center top;
+    mask-repeat: repeat-x;
+    @media (min-width: 35em) {
+      content: none;
+    }
+  }
+}
+
+.home__name {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35em;
+  align-items: end;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1;
+  color: var(--c-accent);
+  @media (min-width: 35em) {
+    grid-row: 2;
+    grid-column: 1;
+    align-items: center;
+  }
+  @media (min-width: 44em) {
+    grid-row: 1 / span 1;
+    grid-column: 2;
+    align-items: baseline;
+  }
+
+  &[class] rt {
+    font-weight: 200;
+    @media (min-width: 57em) {
+      visibility: visible;
+    }
+  }
+}
+
+.page__content-wrapper {
+  padding: 0;
+}
+
+/******************************
+ * Recommendations
+ */
+.recommendations {
+  --attribution__width: 15em;
+  --gap: 1.5em;
+  --surface__background: #ebf9ff;
+  --content__padding--inline: calc(var(--page__padding-inline) * 1);
+
+  position: relative;
+  z-index: 1;
+  grid-column: 1 / -1;
+  padding: 3em var(--page__padding-inline) 4em;
+  background-color: var(--surface__background);
+  @media (min-width: 44em) {
+    --content__padding--inline: calc(var(--page__padding-inline) * 3);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 15vw;
+    transform: skew(0, -1deg);
+    transform-origin: left top;
+    background-image: linear-gradient(
+      to bottom,
+      #bffff5 0,
+      var(--surface__background) 10em
+    );
+    background-repeat: repeat-x;
+  }
+
+  ul[aria-labelledby] {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+      position: relative;
+      z-index: 0;
+      margin: 0;
+      padding: 0;
+
+      + li {
+        margin-top: 3em;
+        padding-top: 6em;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: calc(var(--page__padding-inline) * -1);
+          display: block;
+          width: calc(100% + var(--page__padding-inline) * 2);
+          mask-repeat: repeat-x;
+          mask-size: 2.5em auto;
+        }
+
+        &::before {
+          z-index: -2;
+          height: 100%;
+          background-image: linear-gradient(
+            175deg,
+            #bffff5 0,
+            transparent 10em
+          );
+          background-repeat: repeat-x;
+          mask-image: url(../img/wave-fill.svg);
+          mask-position: left top;
+        }
+
+        &::after {
+          z-index: -1;
+          height: 100%;
+          background-image: linear-gradient(
+            170deg,
+            #66e0ce 0,
+            #cdf8f2 100%
+          );
+          mask-image:
+            url(../img/wave-border.svg);
+          mask-position: 0 0;
+        }
+      }
+    }
+  }
+}
+
+.recommendations__headline,
+.recommendations__note,
+.recommendation {
+  padding: 0 var(--content__padding--inline);
+}
+
+.recommendations__headline {
+  font-weight: 200;
+  text-align: center;
+  margin: 0;
+}
+
+.recommendations__note {
+  margin: 0 0 3em;
+  font-size: 0.875em;
+  text-align: center;
+  color: var(--c-accent);
+}
+
+.recommendation {
+  margin: 0 auto;
+  padding: 0 var(--content__padding--inline);
+  font-weight: 300;
+  @media (min-width: 57em) {
+    display: grid;
+    grid-template-columns: var(--attribution__width) 1fr;
+    gap: var(--gap);
+  }
+
+  :where(span).highlighted {
+    background: #fff;
+    padding-block: 0.25em;
+    padding-inline: 0.5em;
+    background: linear-gradient(#fff 0 0) 0/100% calc(1.6em) no-repeat;
+    box-decoration-break: clone;
+    box-shadow: 2px 2px 0 0 var(--c-accent--lighter);
+    -webkit-box-decoration-break: clone;
+  }
+
+  /* Align the left edge of a highlighted paragraph with other text */
+  :where(p).highlighted {
+    margin-left: -0.5em;
+  }
+}
+
+.recommendation__content {
+  max-width: 30em;
+  @media (min-width: 75em) {
+    max-width: 100%;
+    column-count: 2;
+    gap: var(--gap);
+  }
+}
+
+.attribution {
+  --image__width: 7em;
+
+  align-self: start;
+  display: grid;
+  grid-template-columns: var(--image__width) 1fr;
+  /* Make sure first row takes up all the vertical space minus the room for the date */
+  grid-template-rows: calc(7em - 1.4em);
+  grid-auto-rows: min-content;
+  gap: 0 0.5em;
+  font-size: 0.75em;
+  line-height: 1.4;
+
+  :where(span),
+  :where(time) {
+    display: block;
+  }
+
+  :where(img) {
+    display: block;
+  }
+}
+
+.attribution__photo {
+  align-self: end;
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  max-width: 100%;
+}
+
+.attribution__name {
+  align-self: end;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.attribution__title,
+.attribution__logo {
+  grid-column: 1 / -1;
+}
+
+.attribution__title {
+  padding-block: 0.75em 0.25em;
+  font-weight: 500;
+}
+
+.attribution__logo {
+  max-width: 9em;
+  margin: 0.5em 0;
+}

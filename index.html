@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Wes Ruvalcaba - Résumé</title>
+  <title>Wes Ruvalcaba - UX & Accessibility focused frontend developer</title>
   <!-- <meta name="description" content=""> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,6 +11,7 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -22,8 +23,7 @@
     <header class="page__header-wrapper">
       <div class="page__header">
         <div class="wordmark"><span>wesruv</span></div>
-        <nav class="header__nav" aria-labelledby="header__nav__title">
-          <h2 class="sr-only" id="header__nav__title">Primary navigation</h2>
+        <nav class="header__nav desktop-only" aria-labelledby="header__nav__title" aria-label="Primary navigation">
           <ul>
             <li><a href="resume.html">Résumé</a></li>
             <li><a href="recommendations.html">Recommendations</a></li>
@@ -34,7 +34,8 @@
         <a href="Resume%20%26%20Recs%20-%20Wes%20Ruvalcaba.pdf" class="pdf-version">
           <span class="icon icon--download">Download</span> Résumé
         </a>
-        <ul class="header__social" aria-label="Email and social links">
+
+        <ul class="header__social tablet-desktop-only" aria-label="Email and social links">
           <li class="social-link social-link--email">
             <a class="icon icon--email" href="mailto:wesruv@gmail.com" title="Email me at wesruv@gmail.com">wesruv@gmail.com</a>
           </li>
@@ -51,11 +52,119 @@
         <div class="page--home__header__content">
           <h1><div class="home__name">Wes <ruby class="last-name" tabindex="0">Ruvalcaba <rt>Roov-ah-cah-buh</rt></ruby></div></h1>
           <p><abbr title="User experience">UX</abbr> & <abbr title="Accessibility">a11y</abbr> focused <br>frontend developer</p>
+          <nav class="header__nav mobile-tablet-only" aria-label="Primary navigation">
+            <ul>
+              <li><a href="resume.html">Résumé</a></li>
+              <li><a href="recommendations.html">Recommendations</a></li>
+              <li><a href="recommendations.html">Speaking</a></li>
+              <li><a href="work-samples.html">Work Samples</a></li>
+            </ul>
+          </nav>
+
+          <ul class="header__social mobile-only" aria-label="Email and social links">
+            <li class="social-link social-link--email">
+              <a class="icon icon--email" href="mailto:wesruv@gmail.com" title="Email me at wesruv@gmail.com">wesruv@gmail.com</a>
+            </li>
+            <li class="social-link social-link--linkedIn">
+              <a class="icon icon--linkedIn" href="https://www.linkedin.com/in/wesruv">LinkedIn</a>
+            </li>
+            <li class="social-link social-link--github">
+              <a class="icon icon--github" href="https://github.com/wesruv">Github</a>
+            </li>
+            <li class="social-link social-link--codepen">
+              <a class="icon icon--codepen" href="https://codepen.io/wesruv">Codepen</a>
+            </li>
+          </ul>
         </div>
-        <img class="image--inflatable-geetar" src="img/infaltable-geetar-electric-green.jpg" width="756" height="1000" alt="Playing an inflatable guitar at the Red Hat christmas party" />
+        <div class="image--geetar">
+          <span class="sr-only">Playing an inflatable guitar at the Red Hat holidy party</span>
+        </div>
       </div>
     </header>
     <main class="page__content-wrapper">
+      <div id="recommendations" class="recommendations">
+        <div class="recommendations__content-wrapper">
+          <h2 id="recommendations__headline" class="recommendations__headline">Recommendations</h2>
+          <div class="recommendations__note">These recommendations can also be found on <a href="https://www.linkedin.com/in/wesruv">LinkedIn</a></div>
+          <ul aria-labelledby="recommendations__headline">
+            <li>
+              <blockquote class="recommendation">
+                <footer class="recommendation__attribution attribution">
+                  <img src="img/dawn-aly.jpg" alt="" class="attribution__photo">
+                  <span class="attribution__name">
+                    Dawn Aly
+                  </span>
+                  <time datetime="2026-05">
+                    May 2026
+                  </time>
+                  <span class="attribution__title">
+                    Director, User Experience Engineering Portfolio Strategy
+                  </span>
+                  <img class="attribution__logo" src="img/red-hat-logo.svg" alt="Red Hat (logo)" />
+                </footer>
+                <div class="recommendation__content">
+                  <p>I had the opportunity to work with Wes during his time as a Principal Engineer at Red Hat, and I would gladly work with him again.</p>
+                  <p class="highlighted"><span class="highlighted">Wes has a rare combination of deep technical expertise, systems thinking, and the ability to navigate complex enterprise environments at scale. He consistently tackled difficult architectural and engineering problems, often working across multiple teams and domains to drive solutions forward.</span></p>
+                  <p>One of the things I appreciated most as a product leader was that Wes would always give honest, thoughtful feedback. He never avoided hard conversations or difficult tradeoffs, but his approach was always grounded in helping the team make better decisions. He brought strong opinions backed by experience, context, and a genuine desire to improve outcomes, not just debate for the sake of debate.</p>
+                  <p>His background in open source and enterprise engineering gave him a practical perspective on scalability, maintainability, and long-term platform health that was invaluable in strategic discussions. He has the kind of technical leadership presence that elevates both the architecture and the people around him.</p>
+                  <p>Any organization building complex systems would be fortunate to have Wes on their team.</p>
+                </div>
+              </blockquote>
+            </li>
+            <li>
+              <blockquote class="recommendation">
+                <footer class="recommendation__attribution attribution">
+                  <img src="img/christine-bryan.jpg" alt="" class="attribution__photo">
+                  <span class="attribution__name">
+                    Christine Bryan
+                  </span>
+                  <time datetime="2026-07">
+                    July 2026
+                  </time>
+                  <span class="attribution__title">
+                    Principal Product Manager
+                  </span>
+                  <img class="attribution__logo" src="img/red-hat-logo.svg" alt="Red Hat (logo)" />
+                </footer>
+                <div class="recommendation__content">
+                  <p>At Red Hat, Wes and I worked on a high-stakes initiative to transform our back-end processes, bringing ‘docs as code’ from GitHub to production on access.redhat.com. </p>
+                  <p>When it became clear we were going to miss our original launch deadline for this massive authoring system, the Red Hat Summit, he approached me with a proposal. His suggestion was to use the time instead to visually overhaul and elevate every single document at Red Hat in time for the summit and the launch of RHEL 9. </p>
+                  <p>Under Wes' exceptional leadership, the team rallied and pulled off this massive undertaking. The results spoke for themselves. Our post-launch analysis revealed a incredible +30-point increase in NPS across the board that stayed persistent for quarter after quarter. <span class="highlighted">It remains one of the most impactful transformations I have been a part of. Wes is not just a brilliant strategist; he is an empathetic, people-first leader who builds highly collaborative teams.</span></p>
+                  <p>During our time working together he mentored brand new designers, led technical teams, and helped strategize major changes. And he’s great at karaoke. Any organization would be lucky to have him.</p>
+                </div>
+              </blockquote>
+            </li>
+            <li>
+              <blockquote class="recommendation">
+                <footer class="recommendation__attribution attribution">
+                  <img src="img/nate-lampton.jpg" alt="" class="attribution__photo">
+                  <span class="attribution__name">
+                    Nate Lampton
+                  </span>
+                  <time datetime="2026-07">
+                    June 2026
+                  </time>
+                  <span class="attribution__title">
+                    Senior Technical Architect
+                  </span>
+                  <img class="attribution__logo" src="img/lullabot-logo.png" alt="Lullabot (logo)" />
+                </footer>
+                <div class="recommendation__content">
+                  <p>I worked with Wes on the following projects while at Lullabot:</p>
+                  <ul>
+                    <li>Grammy.com (The Recording Academy)</li>
+                    <li>Carnegie Mellon University</li>
+                    <li>Open-Source contribution (Backdrop CMS)</li>
+                  </ul>
+                  <p>Wes is an incredible front-end developer that has deep familiarity of content management systems, structured data, and decoupled systems. Wes is a literal wizard when it comes to CSS/SCSS manipulation and getting designs consistent and perfect from mobile to desktop. He also has deep accessibility chops and can guide projects to reach the broadest possible audiences (and to meet legal requirements).</p>
+                  <p><span class="highlighted">Besides being an excellent front-end developer, Wes is a community-builder and a capable public-speaker. Wes’s passion and enthusiasm to collaborate can be a powerful driver in group projects.</span> At the same time, he’s incredibly easy to work with. He can simultaneously express his (expert) opinions but remain flexible and a listen closely to the suggestions of his colleagues.</p>
+                  <p>10/10 colleague. Would work with again.</p>
+                </div>
+              </blockquote>
+            </li>
+          </ul>
+        </div>
+      </div>
     </main>
   </div>
   <script src="js/main.js"></script>
