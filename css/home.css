@@ -4,6 +4,7 @@
 
 .page__header-wrapper {
   --surface__background: var(--c-background__greenish);
+  /* --surface__background: #ffffff; */
 
   display: flex;
   flex-direction: column;
@@ -84,7 +85,6 @@
   }
   @media (min-width: 75em) {
     grid-column: 2 / -2;
-    max-height: 41vw; /* Measured in browser */
   }
 }
 
@@ -223,31 +223,16 @@
     background: none;
   }
   @media (min-width: 57em) {
-    /* Measured in browser */
+    grid-row: 1 / span 4;
+    padding-top: 5em;
+    /* Measured in browser to keep image from overlapping border */
     margin-right: 6vw;
   }
   @media (min-width: 75em) {
-    margin-right: 4vw;
+    margin-right: 5vw;
   }
 
-  &::before {
-    content: '';
-    display: block;
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
-    aspect-ratio: var(--image-aspect-ratio);
-    background-image: url(../img/infaltable-geetar-electric-green.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
-    background-position: right bottom;
-    @media (min-width: 35em) {
-      max-width: 100%;
-      height: 100%;
-    }
-  }
-
+  /* Wavy top border on image at mobile */
   &::after {
     content: '';
     position: absolute;
@@ -262,6 +247,21 @@
     mask-repeat: repeat-x;
     @media (min-width: 35em) {
       content: none;
+    }
+  }
+
+  img {
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    aspect-ratio: var(--image-aspect-ratio);
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+    @media (min-width: 35em) {
+      max-width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 }
@@ -492,13 +492,13 @@
   --image__width: 7em;
   --logo__width: 7em;
 
-  font-size: 0.75em;
-  line-height: 1.4;
   display: grid;
   grid-template-columns: var(--image__width) 1fr;
   grid-template-rows: 1fr;
   grid-auto-rows: min-content;
-  gap: 0 0.75em;
+  gap: 0 1em;
+  font-size: 0.75em;
+  line-height: 1.4;
   margin-bottom: 2em;
   @media (min-width: 35em) {
     --logo__width: 9em;
