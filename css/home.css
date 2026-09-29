@@ -4,7 +4,6 @@
 
 .page__header-wrapper {
   --surface__background: var(--c-background__greenish);
-  /* --surface__background: #ffffff; */
 
   display: flex;
   flex-direction: column;
@@ -36,8 +35,9 @@
     @media (min-width: 35em) {
       content: '';
       position: relative;
+      left: 0;
       z-index: 0;
-      width: 150%;
+      width: 200%;
       grid-row: 1 / span var(--total-rows);
       grid-column: 1;
       align-self: stretch;
@@ -121,6 +121,9 @@
     border-right-width: 0.25em;
     transform: skewX(12deg);
     transform-origin: right bottom;
+  }
+
+  &::before {
     @media (min-width: 35em) {
       content: none;
     }

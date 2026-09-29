@@ -1,0 +1,186 @@
+:root {
+  --font__color--base: #000;
+  --page__padding-inline: 0rem;
+  --header__marginBottom: 3rem;
+  --content__padding-inline: 0;
+
+  font-size: 7pt;
+}
+
+body {
+  background: transparent;
+  color: var(--font__color--base);
+}
+
+a,
+a:visited {
+  text-decoration: underline;
+}
+
+a[href]::after {
+  content: ' (' attr(href) ')';
+}
+
+abbr[title]::after {
+  content: ' (' attr(title) ')';
+}
+
+p,
+h2,
+h3 {
+  orphans: 3;
+  widows: 3;
+}
+
+h2,
+h3 {
+  page-break-after: avoid;
+}
+
+.skills,
+.experience-list > li {
+  page-break-inside: avoid;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.page__header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr -webkit-min-content;
+  grid-template-rows: 1fr min-content;
+  grid-template-columns: -webkit-min-content 1fr 1fr;
+  grid-template-columns: min-content 1fr 1fr;
+  grid-column: 1 / -1;
+  align-items: center;
+  overflow: hidden;
+}
+
+.page__header::before,
+.page__header::after {
+  content: none;
+}
+
+.wordmark,
+.header__name {
+  padding-top: 3rem;
+}
+
+.wordmark {
+  grid-row: 1 / span 2;
+  height: 100%;
+  color: var(--font__color);
+}
+.wordmark span {
+  background: transparent;
+}
+
+.wordmark::before {
+  content: '';
+}
+
+.header__name {
+  grid-row: 1 / span 1;
+  grid-column: 2;
+  height: 100%;
+  padding-left: 2rem;
+  border: 0;
+}
+
+.header__name rt {
+  display: inline-block;
+  visibility: visible;
+  margin-left: 0.75em;
+  color: inherit;
+  font-weight: 400;
+}
+
+.header__social {
+  justify-self: end;
+  flex-wrap: wrap;
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  gap: 0.75em;
+  font-size: 0.8em;
+}
+
+.header__social .icon {
+  display: flex;
+  overflow: visibile;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  text-decoration: none;
+}
+
+.header__social .icon::before {
+  position: static;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.25em;
+  transform: none;
+}
+.header__social .icon::after {
+  content: attr(href);
+  display: block;
+  text-indent: 0;
+}
+
+.header__social .icon--email::after {
+  content: 'wesruv@gmail.com';
+}
+
+.page__content-wrapper {
+  grid-column: 1 / span 2;
+  padding-right: 3em;
+  border-right: 1px solid var(--border__color);
+}
+
+.experience-list__date {
+  display: inline;
+}
+
+li:has(.experience-list__more) {
+  display: none;
+}
+
+.sidebar__heading {
+  display: none;
+}
+
+.skills__list > li {
+  margin-bottom: 1em;
+}
+
+.skill__level,
+.experience-list__details li::before,
+.icon::before {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.skill__level {
+  position: relative;
+  overflow: visible;
+  box-shadow: inset 0 0 0 0.1em var(--c-accent--secondary);
+}
+
+.skill__level::before {
+  margin: 0.25em;
+}
+
+.skill__level::after {
+  content: attr(title);
+  position: absolute;
+  top: 100%;
+  left: 0.5em;
+  display: block;
+  font-size: 0.75em;
+}
+
+.page__sidebar {
+  padding-left: 2em;
+}
