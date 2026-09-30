@@ -1,0 +1,73 @@
+.page__content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 40em) 1fr;
+  padding-inline: calc(var(--page__padding-inline) * 3);
+}
+
+.speaking-intro__wrapper,
+.previous-talks__wrapper {
+  grid-column: 2;
+}
+
+.speaking-intro__wrapper {
+  padding-block: 4em 3em;
+  @media (min-width: 44em) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0 2em;
+    grid-auto-rows: min-content;
+    grid-template-rows: min-content min-content 1fr;
+  }
+
+  img {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    display: block;
+    max-width: 20rem;
+    height: auto;
+    margin: 0 auto 2em;
+    @media (min-width: 44em) {
+      max-width: 100%;
+    }
+  }
+}
+
+.speaking-intro__headline,
+.speaking-intro__content {
+  grid-column: 1;
+  margin: 0;
+}
+
+.speaking-intro__headline {
+  margin-bottom: 1.5rem;
+}
+
+.previous-talk__title {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.previous-talk__info-wrapper {
+  margin: 0 0 3em;
+}
+
+.previous-talk__time {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.previous-talk__location {
+  margin-bottom: 1em;
+}
+
+.previous-talk__slides {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  font-weight: bold;
+  transform: translateX(-0.75em);
+}
+
+.previous-talk__dates {
+  margin: 0 0 1em;
+  padding: 0 0 0 1.5em;
+}
