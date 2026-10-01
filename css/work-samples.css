@@ -1,0 +1,145 @@
+.page__content-wrapper {
+  display: block;
+  width: 100%;
+  max-width: 40em;
+  margin-inline: auto;
+  padding-inline: calc(var(--page__padding-inline) * 2);
+  @media (min-width: 35em) {
+    padding-inline: calc(var(--page__padding-inline) * 3);
+  }
+}
+
+.content-header__wrapper,
+.previous-talks__wrapper {
+  grid-column: 2;
+}
+
+.content-header__headline,
+.content-header__content {
+  grid-column: 1;
+  margin: 0;
+}
+
+.content-header__img-wrapper {
+  --img__aspect-ratio: 1 / 1;
+  --border-radius: 1em;
+
+  width: 100%;
+  aspect-ratio: var(--img__aspect-ratio);
+  max-width: 20rem;
+
+  &::before {
+    border-radius: var(--border-radius);
+  }
+}
+
+.space-dude {
+  --image__width: 37.75rem;
+
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding:  0;
+  width: 100%;
+  aspect-ratio: var(--img__aspect-ratio);
+  background: linear-gradient(
+    12deg,
+    var(--c-accent--light) 0%,
+    var(--c-accent--dark) 70%
+  );
+  text-align: center;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  img {
+    position: relative;
+    display: block;
+    margin: 0 auto 0.0625em;
+    width: var(--image__width);
+    box-shadow: none;
+  }
+}
+
+.space-dude__inner-wrapper {
+  position: relative;
+  display: flex;
+  align-items: end;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(190deg,
+      rgba(200, 0, 50, 0.4),
+      rgba(150, 0, 50, 0) 60%);
+    border-radius: 5%;
+  }
+}
+
+.space-dude__antenna-nonsense {
+  position: absolute;
+  top: 26%;
+  right: 31%;
+  width: 6em;
+  height: 6em;
+  overflow: hidden;
+  transform: scale(0.5) rotate(58deg);
+  transform-origin: right top;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4em;
+    height: 4em;
+    background: radial-gradient(
+      transparent 35%,
+      rgb(238, 105, 34) 35%,
+      rgb(238, 105, 34) 45%,
+      transparent 45%,
+      transparent 60%,
+      rgb(238, 105, 34) 60%,
+      rgb(238, 105, 34) 70%,
+      transparent 70%
+    );
+    transform: translate(50%, -50%);
+    opacity: 0.1;
+    animation: 2s infinite emit;
+    animation-timing-function: linear;
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+      opacity: 0.5;
+    }
+  }
+}
+
+.space-dude__antenna-nonsense--2 {
+  transform: scale(0.5) rotate(-120deg);
+}
+@keyframes emit {
+  0% {
+    transform: translate(50%, -50%) scale(0.6);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(50%, -50%) scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(50%, -50%) scale(1.2);
+    opacity: 0;
+  }
+  75% {
+    transform: translate(50%, -50%) scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
