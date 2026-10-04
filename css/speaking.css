@@ -23,7 +23,6 @@
 .content-header__headline,
 .content-header__content {
   grid-column: 1;
-  margin: 0;
 }
 
 .previous-talk__title {

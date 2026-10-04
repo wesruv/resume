@@ -66,18 +66,20 @@
           </div>
         </div>
         <div class="content-header__content">
-          <p>Examples of what I do and how I work.</p>
+          <p>A lot of my work gets updated or replaced, I have some technical examples and some projects I played a major role in.</p>
         </div>
       </div>
 
       <ul class="work-examples__wrapper">
-        <li>
-          <h2>This site!</h2>
-          <time datetime="2026">2026</time>
+        <li class="work-example">
+          <div class="work-example__header">
+            <h2>This site!</h2>
+            <time datetime="2026">2026</time>
+          </div>
           <p>I had a lot of fun making it, I perused color schemes until I found a good starting point, goofed off in Figma for an hour, then wrote HTML & CSS until I was sufficiently amused.</p>
           <p>All of the art, graphics, design, code, and vibes are 100% me, no AI necessary. Plenty of CSS chicanery, accessible HTML, and other nerdery if you poke through the assets and code.</p>
         </li>
-        <li>
+        <li class="work-example">
           <h2>Red Hat Documentation</h2>
           <time datetime="2021">2021</time>-<time datetime="2024">2024</time>
           <p>While at Red Hat I got to work on their software documentation site. It hadn't seen significant updates in many years when I arrived, and the customer relationship and code situation where in a poor state.</p>
@@ -85,21 +87,58 @@
           <ul>
             <li><strong>Recognized as one of Red Hat's top 150 premier technical contributors</strong> in 2023</li>
             <li>
-              <strong>Discovery & Project Planning</strong> - I interviewed documentation authors, gathered customer feedback, and created analytics reports to understand the current state and set a baseline for improvement. I then wrote many documents detailing requirements and a system architecture for a new content management system that was approved.
+              <strong>Discovery, System Architecture, & Project Planning</strong> - I interviewed documentation authors, gathered customer feedback, and created analytics reports to understand the current state and set a baseline for improvement. I then wrote up a project plan and system architecture for a new <abbr title="Content Management System">CMS</abbr> for their 200+ authors all legacy and future content that was approved.
             </li>
             <li>
               <strong>Technical Leadership</strong> - I pitched and led the effort to rebuild the front-end of documentation addressing design, accessibility, and helped solve content issues with documentation authors with complex needs.
             </li>
             <li>
-              <strong>UX Leadership</strong> - partnered with our design team to help solve the user interface, user experience, and technical challenges that sprung out of our documentation system, process, and our users needs.
+              <strong>UX Leadership</strong> - partnered with our design team to help solve the user interface, user experience, and technical challenges that sprung out of our documentation system, editorial process, and our author and end user needs.
             </li>
           </ul>
         </li>
+        <li class="work-example">
+          <div class="work-example__header">
+            <h2>HTML & CSS Venn diagram</h2>
+            <time datetime="2018">2018</time>
+          </div>
+          <a href="https://codepen.io/wesruv/full/RjmVvV" title="Live example on Codepen" class="work-sample__image">
+            <img src="img/venn.png" alt="Venn Diagram with 3 circles" />
+          </a>
+          <p>A client wanted a visualization of different ways of contributing to their school. Since the content seemed important to their part of the site, I felt it'd be better as well structured HTML for SEO and accessibility.</p>
+          <p>It's in the HTML once, the "desktop version" is a venn diagram, the "mobile version" appears as headings and lists.</p>
+          <a href="https://codepen.io/wesruv/pen/RjmVvV" class="button">
+            See it on CodePen
+          </a>
+        </li>
+        <li class="work-example">
+          <div class="work-example__header">
+            <h2>Scaleable pixel perfect graphic</h2>
+            <time datetime="2016">2016</time>
+          </div>
+          <a href="https://codepen.io/wesruv/pen/aNKZGK" title="Live example on Codepen" class="work-sample__image">
+            <img src="img/lullabot-codepen.png" alt="Lullabot logo made with HTML & CSS">
+          </a>
+          <p>A nerdy flex and an example I made for the article "<a href="https://www.lullabot.com/articles/scaling-css-components-with-bem-rems-ems">Scaling CSS Components with BEM, REMs, & EMs</a>, it's the Lullabot logo at the time. It's pixel perfect thanks to an equation I wrote to help me get the correct measurements, from an image of the logo to <code>em</code>s.</p>
+          <a href="https://codepen.io/wesruv/pen/aNKZGK" class="button">
+            See it on CodePen
+          </a>
+        </li>
+        <li class="work-example">
+          <div class="work-example__header">
+            <h2>Simple collapsible container</h2>
+            <time datetime="2024">2024</time>
+          </div>
+          <p>This is small pragmatic Javascript Class I wrote, it nails the aria and accessibility toggle that can expand/collapsable a container; just add CSS. Check out the doc block in JS, it can be dropped in and used out of the box, or practically anything can be tweaked for a few different use cases.</p>
+          <p>At time of writing it's used on the main menu dropdowns on <a href="https://www.usenix.org/">Usenix's website</a>.</p>
+          <a href="https://codepen.io/wesruv/pen/VwJYLYN" class="button">
+            Example and Docs on CodePen
+          </a>
       </ul>
 
     </main>
     <div class="page__footer">
-      The human known as <strong>Wes Ruvalcaba wrote the HTML, CSS, & Javascript</strong> 💪🤓
+      All of the art, graphics, design, code, and vibes by me! Wes Ruvalcaba 💪🤓
     </div>
   </div>
   <script src="js/main.js"></script>
