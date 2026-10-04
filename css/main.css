@@ -3,13 +3,26 @@
  */
 :root {
   /* Constants */
+  --crgb-accent: 19, 103, 138;
+  --crgb-accent--dark: 14, 76, 102;
+  --crgb-accent--light: 69, 196, 176;
+  --crgb-accent--lighter: 166, 240, 229;
+  --crgb-accent--light-bright: 82, 255, 229;
+  --crgb-accent--secondary: 154, 235, 163;
+  --crgb-accent--light--text: 8, 149, 128;
+
   --c-accent: #13678A;
   --c-accent--dark: #0e4c66;
+  --c-accent--darker: #093243;
   --c-accent--light: #45C4B0;
   --c-accent--lighter: #a6f0e5;
   --c-accent--light-bright: #52ffe5;
   --c-accent--secondary: #9AEBA3;
   --c-accent--light--text: #089580;
+
+  --c-background__greenish: #D3FFCF;
+  --c-background__blueish: #ebf9ff;
+
 
   --c-background__greenish: #D3FFCF;
   --c-background__blueish: #ebf9ff;
@@ -211,8 +224,15 @@ abbr[title] {
   align-items: stretch;
   min-height: 100dvh;
   margin: 0 auto;
+  /* Fixed header height measured in browser */
+  padding-top: 3.8125rem;
   color: var(--font__color);
   background: var(--surface__background);
+
+  @media (min-width: 44em) {
+    /* Fixed header height measured in browser */
+    padding-top: 6rem;
+  }
 }
 
 /****************************
@@ -221,25 +241,30 @@ abbr[title] {
 .page__header-wrapper {
   --surface__background: var(--c-background__greenish);
 
-  position: relative;
+  position: fixed;
+  top: 0;
   z-index: 500;
+  width: 100%;
   display: flex;
   background: var(--surface__background);
 }
 
 .page__header,
 .page__header--sticky[class][class] {
-  --display: grid;
+  --display: flex;
 
   position: relative;
   display: var(--display);
-  grid-template-columns: 1fr;
-  align-items: center;
+  width: 100%;
   padding: 0 var(--page__padding-inline);
   border-bottom: 1px solid var(--border__color);
 
   @media (min-width: 35em) {
+    --display: grid;
+
+    grid-template-columns: 1fr 1fr;
     grid-template-columns: minmax(0, 1fr);
+    align-items: center;
     row-gap: 1em;
   }
 
@@ -270,8 +295,13 @@ abbr[title] {
   width: 100%;
   height: auto;
   background: var(--c-background__greenish);
-  box-shadow: 0 0.25em 0 #0043;
-  overflow: hidden;
+  box-shadow: 0 0.25em 3px rgba(var(--crgb-accent--dark), 0.5);
+  transition: box-shadow 0.25s ease;
+  /* overflow: hidden; */
+
+  &:has(.mobile-menu--expanded) {
+    box-shadow: none;
+  }
 
   &.is-sticky {
     display: var(--display);
@@ -361,6 +391,37 @@ abbr[title] {
   }
 }
 
+a.wordmark {
+  transition: text-shadow 0.25s ease;
+
+  span {
+    transition: transform 0.25s ease;
+  }
+
+  &::before {
+    transition: background 0.25s ease;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    text-decoration: none;
+    text-shadow:
+      -1px 1px 0 var(--c-accent--light),
+      -2px 2px 0 rgba(var(--crgb-accent--light), 0.75),
+      -3px 3px 0 rgba(var(--crgb-accent--light), 0.5),
+      -4px 4px 0 rgba(var(--crgb-accent--light), 0.25);
+
+    &::before {
+      background-color: var(--c-accent--dark);
+    }
+
+    span {
+      transform: translate(4px, -4px);
+    }
+  }
+}
+
 .header__name {
   display: flex;
   gap: 0.35em;
@@ -434,6 +495,184 @@ abbr[title] {
   }
 }
 
+.header__burger {
+  display: none;
+
+  &.mobile-menu__control--active {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 4em;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+  }
+
+  &[aria-expanded="true"] {
+    background: var(--c-accent--lighter);
+  }
+}
+
+.burger__icon {
+   /* Settings */
+  --burger__bar-color: var(--c-accent);
+  --burger__animation-duration: 0.3s;
+  --burger__animation-timing: cubic-bezier(0.55, 0.085, 0, 0.99);
+  --burger__bar-width: 32px;
+  --burger__bar-height: 5px;
+  --burger__space-between-bars: 6px;
+  /*
+    This has to be figured out when any of the bar widht/height/space between is updated
+    I'm sure there's some pythagorean function for this, but I haven't figured it out
+    This var raises the bar that goes from bottom left to top right in the x.
+    Comment out the line that starts with "transform: scale(" to get a more accurate reading in browser
+   */
+  --burger__fudge-for-bottom-bar-in-x: -4px;
+
+  /* Initializing vars to be updated later */
+  --burger__translate: '';
+  --burger__transform-origin: '';
+
+   /**
+    * Calculate dimensions with scaling
+    * Scaling down makes the icon appear nicer, since we get anti-aliasing
+    * and subpixel roundering errors on box-model and position styles are less likely to cause issues.
+    */
+  --burger__scaling: 4;
+  --burger__bar-width--scaled: calc(var(--burger__bar-width) * var(--burger__scaling));
+  --burger__bar-height--scaled: calc(var(--burger__bar-height) * var(--burger__scaling));
+  --burger__space-between-bars--scaled: calc(var(--burger__space-between-bars) * var(--burger__scaling));
+
+  display: block;
+  width: var(--burger__bar-width);
+  height: calc(var(--burger__bar-height) * 3 + var(--burger__space-between-bars) * 2);
+  /* Scale to get anti-aliasing and avoid subpixel rounding bugs */
+  transform: scale(calc(1 / var(--burger__scaling)));
+  transform-origin: left top;
+  transition: transform 0.25s ease;
+
+  [aria-expanded="true"] & {
+    /* Translate was measured in browser to center align the X */
+    transform: scale(calc(1 / var(--burger__scaling))) translate(1.5em);
+  }
+
+  /* Basic setup for the two elements that make the icon */
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    display: block;
+    width: var(--burger__bar-width--scaled);
+  }
+
+  /* Hamburger top bar - Closed/default */
+  &::before {
+    --burger__transform-origin: left top;
+
+    height: 0;
+    border-top-width: var(--burger__bar-height--scaled);
+    border-top-style: solid;
+    border-top-color: var(--burger__bar-color);
+    background: var(--burger__bar-color);
+    transform: translateY(calc(var(--burger__space-between-bars--scaled) + var(--burger__bar-height--scaled)) * -1);
+    transform-origin: var(--burger__transform-origin);
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform var(--burger__animation-duration) var(--burger__animation-timing);
+    }
+  }
+
+  /* Hamburger bottom bar - Closed/default */
+  &::after {
+    --burger__height: calc(var(--burger__bar-height--scaled) * 2 + var(--burger__space-between-bars--scaled));
+    --burger__transform-origin: left bottom;
+
+    top: calc(var(--burger__bar-height--scaled) + var(--burger__space-between-bars--scaled));
+    height: calc(var(--burger__space-between-bars--scaled) + var(--burger__bar-height--scaled) * 2);
+    border-width: var(--burger__bar-height--scaled);
+    border-style: solid;
+    border-color: var(--burger__bar-color);
+    border-inline-width: 0;
+    background: transparent;
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        border var(--burger__animation-duration)  var(--burger__animation-timing),
+        transform var(--burger__animation-duration)  var(--burger__animation-timing);
+      transform-origin: var(--burger__transform-origin);
+    }
+  }
+
+  [aria-expanded="true"] & {
+    &:before {
+      border-top-color: var(--burger__bar-color);
+      transform:
+        rotate(45deg);
+      transform-origin: var(--burger__transform-origin);
+    }
+    /* Hamburger bottom bar - Open Menu */
+    &:after {
+      border-top-color: transparent;
+      border-bottom-color: var(--burger__bar-color);
+      /* Translate is measured in browser */
+      transform:
+        translateY(var(--burger__fudge-for-bottom-bar-in-x))
+        rotate(-45deg);
+      transform-origin: var(--burger__transform-origin);
+    }
+  }
+}
+
+.mobile-menu__dropdown--active {
+  --surface__background: var(--c-accent--lighter);
+
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  max-width: 20em;
+  display: grid;
+  grid-template-rows: 0fr;
+  background: var(--surface__background);
+  transition: grid-template-rows 0.25s ease;
+
+  &,
+  a {
+    color: var(--c-accent--darker);
+  }
+
+  &.mobile-menu--expanded {
+    grid-template-rows: 1fr;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      width: calc(100% + 0.25em);
+      height: calc(100% + 0.25em);
+      background: rgba(var(--crgb-accent--dark), 0.4);
+      box-shadow: 0 2px 3px rgba(var(--crgb-accent--dark), 0.4);
+    }
+  }
+
+  .header__mobile-menu__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    min-height: 0;
+    overflow: hidden;
+    transition: padding 0.25s ease;
+  }
+
+  &.mobile-menu--expanded .header__mobile-menu__inner {
+    padding-block: 1em;
+  }
+}
+
 .pdf-version {
   position: absolute;
   top: 0;
@@ -447,9 +686,27 @@ abbr[title] {
   color: var(--font__color--base);
   border-radius: 0 0 0.25em 0.25em;
 
-  .is-sticky & {
-    display: none;
+  .mobile-menu__dropdown--active & {
+    position: static;
+    width: min-content;
+    white-space: nowrap;
+    border: 2px solid var(--c-accent--light);
+    border-radius: 1.6em;
+    margin-inline: auto;
+    font-size: 0.875em;
+    background: transparent;
+
+    .icon {
+      order: 1;
+    }
+
+    &:hover,
+    &:focus {
+      background: var(--c-background__blueish);
+      text-decoration: none;
+    }
   }
+
 
   .icon {
     width: 1.5em;
@@ -503,6 +760,11 @@ abbr[title] {
     gap: 0.75em;
     margin-left: auto;
     padding: 0;
+  }
+
+  .mobile-menu__dropdown--active & {
+    inset: auto;
+    margin-inline: auto;
   }
 }
 
@@ -615,13 +877,14 @@ abbr[title] {
       display: flex;
       gap: var(--gap);
     }
+  }
 
-    .page--home & {
+    .page--home__header__content & ul,
+    .page--home &.desktop-only ul {
       padding-inline: 0;
       /* Optically align first link with text */
       margin-inline: calc(var(--link__padding-inline) * -1) 0;
     }
-  }
 
   li {
     display: block;
@@ -637,24 +900,17 @@ abbr[title] {
     border-radius: 0;
     @media (min-width: 57em) {
       display: block;
+      transition: color 0.25s ease;
+      outline: 0;
+      box-shadow: none;
     }
 
     &.active {
       box-shadow: inset 0 -3px 0 var(--c-accent--light--text);
     }
 
-    .page__header--sticky & {
-      position: relative;
-      z-index: 0;
-      display: flex;
-      align-items: end;
-      /* Measured in browser to align baseline of logo */
-      padding-bottom: 0.8em;
-      transition: color 0.25s ease;
-      outline: 0;
-      box-shadow: none;
-
-      &::before {
+    &::before {
+      @media (min-width: 75em) {
         content: '';
         position: absolute;
         top: 0;
@@ -675,15 +931,36 @@ abbr[title] {
 
       &:hover,
       &:focus {
-        color: var(--c-accent--dark);
-        text-decoration: none;
+        @media (min-width: 57em) {
+          color: var(--c-accent--dark);
+          text-decoration: none;
+        }
 
         &::before {
-          background-color: var(--c-accent--secondary);
-          transform: skew(12deg);
+          @media (min-width: 57em) {
+            background-color: var(--c-accent--secondary);
+            transform: skew(12deg);
+          }
         }
       }
     }
+
+    .page__header--sticky & {
+      display: flex;
+      align-items: end;
+      @media (min-width: 57em) {
+        /* Measured in browser to align baseline of logo */
+        padding-bottom: 0.8em;
+      }
+    }
+  }
+}
+
+.header__nav--mobile[class] {
+  display: none;
+
+  .mobile-menu__dropdown--active & {
+    display: block;
   }
 }
 

@@ -1,4 +1,5 @@
 .page--home {
+  padding-top: 0;
   padding-bottom: 0;
 }
 
@@ -12,6 +13,10 @@
   padding-block: 0;
   padding-inline: var(--page__padding-inline);
   background: var(--surface__background);
+
+  &:has(.is-sticky) {
+    z-index: 500;
+  }
 
   @media (min-width: 35em) {
     --total-rows: 3;
@@ -132,7 +137,7 @@
   }
 }
 
-.header__nav {
+.header__nav.mobile-tablet-only {
   font-size: 1rem;
   @media (min-width: 35em) {
     grid-row: 3;
@@ -153,7 +158,7 @@
   }
 }
 
-.header__social {
+.header__social.tablet-desktop-only {
   align-self: baseline;
   @media (min-width: 35em) {
     justify-self: end;
@@ -207,6 +212,7 @@
   position: relative;
   z-index: 0;
   width: calc(100% + var(--page__padding-inline) * 2);
+  margin-left: calc(var(--page__padding-inline) * -1);
   padding-top: 4em;
   background: var(--c-accent);
   mask-image: url(../img/wave-fill.svg);
