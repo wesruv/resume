@@ -9,7 +9,7 @@
       '#experience-list__heading--employment, #recommendations__headline'
     );
     const $header = document.querySelector(
-      '.resume-wrapper__header, .page__header--sticky'
+      '.resume__header, .page__header--sticky'
     );
 
     if (!$pointOfHeaderAppearing || !$header) return;

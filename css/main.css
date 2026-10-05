@@ -103,7 +103,7 @@ body {
   margin: 0 0 1em;
 }
 
-a {
+:where(a) {
   color: var(--c-accent);
   text-decoration: none;
   border-radius: 0.25em;
@@ -114,7 +114,6 @@ a {
     text-decoration-color: var(--c-accent--light);
   }
 
-  &:hover,
   &:focus {
     box-shadow:
       0 0 0 2px var(--surface__background),
@@ -147,9 +146,11 @@ abbr[title] {
 }
 
 /* Fancy bullets for lists */
-.work-example,
-.previous-talk__info-wrapper {
-  ul li {
+.work-example > ul,
+.previous-talk__info-wrapper > ul,
+.experience-list > li > .experience-list__details,
+.experience-list__subsection ul {
+  > li {
     list-style: none;
     position: relative;
 
@@ -163,9 +164,21 @@ abbr[title] {
       width: 0.25em;
       height: 0.25em;
       background: var(--c-accent--light);
-      transform: skew(12deg) translate(0, -3px);
+      transform: skew(12deg) translate(0, -0.15em);
+    }
+
+    > ul > li::before {
+      width: 0.25em;
+      height: 0.25em;
+      border: 2px solid var(--c-accent--light);
+      background: transparent;
+      transform: skew(12deg) translate(0, -0.2em) scale(0.75);
     }
   }
+}
+
+.experience-list__subsection[class] > li::before {
+  content: none;
 }
 
 /* Dash divider for lists */
@@ -243,6 +256,7 @@ abbr[title] {
 
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 500;
   width: 100%;
   display: flex;
@@ -257,7 +271,7 @@ abbr[title] {
   display: var(--display);
   width: 100%;
   padding: 0 var(--page__padding-inline);
-  border-bottom: 1px solid var(--border__color);
+  border-bottom: 2px solid var(--border__color);
 
   @media (min-width: 35em) {
     --display: grid;
@@ -686,6 +700,15 @@ a.wordmark {
   color: var(--font__color--base);
   border-radius: 0 0 0.25em 0.25em;
 
+  &:hover,
+  &:focus {
+    box-shadow:
+      0 0 0 2px var(--surface__background),
+      0 0 0 4px var(--c-accent--light),
+      0 0 0 6px var(--surface__background);
+    text-decoration: none;
+  }
+
   .mobile-menu__dropdown--active & {
     position: static;
     width: min-content;
@@ -703,7 +726,6 @@ a.wordmark {
     &:hover,
     &:focus {
       background: var(--c-background__blueish);
-      text-decoration: none;
     }
   }
 
