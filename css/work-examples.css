@@ -186,10 +186,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0 0.25em;
+  gap: 0 0.5em;
+  margin-bottom: 0.75rem;
 
   h2 {
-    margin: 0 0.5em 0.75rem 0;
+    margin: 0;
+    line-height: 1.4;
   }
 
   time {
@@ -198,12 +200,11 @@
 }
 
 .work-sample__image {
+  position: relative;
   display: block;
-  overflow: hidden;
   max-width: 15em;
   margin-inline: auto;
   margin-bottom: 1.5em;
-
   @media (min-width: 46em) {
     width: 25%;
     margin: 0 0 1.5em 1.5em;
@@ -212,5 +213,23 @@
   @media (min-width: 57em) {
     width: 33.333%;
     margin-right: calc(var(--bleed) * -1 + 0.5em);
+  }
+
+  img {
+    box-shadow: 3px 3px 0 0 #45C4B0aa;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    display: block;
+    background: var(--c-accent--lighter);
+    width: 105%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    transform: translate(-52%, -50%) rotate(-6deg);
   }
 }

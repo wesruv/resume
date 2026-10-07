@@ -129,11 +129,6 @@
       content: none;
     }
   }
-
-  span {
-    /* To convince automated a11y tools the bg color can have white text */
-    background: var(--c-accent);
-  }
 }
 
 .header__nav.desktop-only {
