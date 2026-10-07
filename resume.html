@@ -30,9 +30,9 @@
         </button>
         <nav class="header__nav desktop-only" aria-labelledby="header__nav__title" aria-label="Primary navigation">
           <ul>
-            <li><a href="resume.html">Résumé</a></li>
+            <li><a href="resume.html" class="active">Résumé</a></li>
             <li><a href="speaking.html">Speaking</a></li>
-            <li><a href="work-samples.html">Work Samples</a></li>
+            <li><a href="work-examples.html">Work Examples</a></li>
           </ul>
         </nav>
 
@@ -42,7 +42,7 @@
               <ul>
                 <li><a href="resume.html">Résumé</a></li>
                 <li><a href="speaking.html">Speaking</a></li>
-                <li><a href="work-samples.html">Work Samples</a></li>
+                <li><a href="work-examples.html">Work Examples</a></li>
               </ul>
             </nav>
 
@@ -70,6 +70,11 @@
     </header>
 
     <main class="page__content-wrapper">
+      <h1 class="sr-only">Resume</h1>
+      <header class="resume__header">
+        <h2 class="resume__name">Wes <ruby class="last-name" tabindex="0">Ruvalcaba <rt>Roov-ah-cah-buh</rt></ruby></h2>
+        <div class="resume__tagline"><abbr title="User experience">UX</abbr> & <abbr title="Accessibility">a11y</abbr> focused frontend developer</div>
+      </header>
       <div class="resume__primary-content">
         <!--
         - Job Experience
@@ -440,6 +445,9 @@
         </div>
       </div>
     </main>
+  </div>
+  <div class="page__footer">
+    All of the art, graphics, design, code, and vibes by me! Wes Ruvalcaba 💪🤓
   </div>
   <script src="js/main.js"></script>
 

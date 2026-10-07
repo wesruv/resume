@@ -1,3 +1,5 @@
+@media print {
+
 :root {
   --font__color--base: #000;
   --page__padding-inline: 0rem;
@@ -47,16 +49,9 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.page__header {
-  position: relative;
-  display: grid;
-  grid-template-rows: 1fr -webkit-min-content;
-  grid-template-rows: 1fr min-content;
-  grid-template-columns: -webkit-min-content 1fr 1fr;
-  grid-template-columns: min-content 1fr 1fr;
-  grid-column: 1 / -1;
-  align-items: center;
-  overflow: hidden;
+.page__header-wrapper,
+.page__footer {
+  display: none;
 }
 
 .page__header::before,
@@ -134,9 +129,8 @@ h3 {
 }
 
 .page__content-wrapper {
-  grid-column: 1 / span 2;
+  grid-column: 1 / -1;
   padding-right: 3em;
-  border-right: 1px solid var(--border__color);
 }
 
 .experience-list__date {
@@ -180,7 +174,4 @@ li:has(.experience-list__more) {
   display: block;
   font-size: 0.75em;
 }
-
-.page__sidebar {
-  padding-left: 2em;
 }

@@ -27,6 +27,7 @@
   aspect-ratio: var(--img__aspect-ratio);
   /* Font size is used to scale the space man */
   max-width: 15em;
+  print-color-adjust: exact;
 
   &::before {
     border-radius: var(--border-radius);

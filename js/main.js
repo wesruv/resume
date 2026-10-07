@@ -9,14 +9,15 @@
       '#experience-list__heading--employment, #recommendations__headline'
     );
     const $header = document.querySelector(
-      '.resume__header, .page__header--sticky'
+      '.page__header--sticky'
     );
 
     if (!$pointOfHeaderAppearing || !$header) return;
 
     const observer = new IntersectionObserver(
       ([event]) => {
-        $header.classList.toggle('is-sticky', event.intersectionRatio < 1);
+        // Only add the class once we've scrolled past it
+        $header.classList.toggle('is-sticky', event.boundingClientRect.top < 0);
       },
       {threshold: [1]}
     );
@@ -197,7 +198,6 @@
      * Add all behaviors and attributes to make element expandable
      */
     addExpandBehavior() {
-      console.log('expandin');
       // Make sure the aria-controls attribute matches the id of the element controlling it
       this.dropdown.classList.add(this._classNames.dropdownActive);
       this.control.classList.add(this._classNames.controlActive);

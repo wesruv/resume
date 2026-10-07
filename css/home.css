@@ -122,7 +122,6 @@
     right: 0;
     top: 0;
     bottom: 0;
-    width: 150%;
     align-self: stretch;
     justify-self: end;
     border-right-width: 0.25em;
@@ -491,6 +490,11 @@
     max-width: 100%;
     column-count: 2;
     gap: var(--gap);
+  }
+
+  @media print {
+    column-count: 2;
+    max-width: 100%;
   }
 }
 

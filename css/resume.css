@@ -1,6 +1,6 @@
 html,
 body {
-  --surface__background: var(--font__color--base);
+  --surface__background: var(--c-accent--darker);
   --font__color: #fff;
 
   color: var(--font__color);
@@ -25,6 +25,86 @@ body {
   }
 }
 
+/****************************
+ * Resume Header
+ */
+.resume__header {
+  position: relative;
+  grid-row: 1;
+  grid-column: 1 / -1;
+  padding: 0 0 1.5em;
+  @media (min-width: 44em) {
+    padding-top: 1.5em;
+  }
+
+  print-color-adjust: exact;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: calc(var(--page__padding-inline) * -0.5);
+    display: block;
+    width: calc(100% + var(--page__padding-inline) * 1);
+    height: 2px;
+    background-color: var(--c-accent--lighter);
+    @media (min-width: 57em) {
+      left: calc(var(--page__padding-inline) * -1);
+      width: calc(100% + var(--page__padding-inline) * 2);
+    }
+  }
+}
+
+.resume__name[class][class] {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  text-transform: none;
+  letter-spacing: 0.025em;
+  font-size: 2em;
+  margin: -1em 0 0;
+  line-height: 1.4;
+
+  ruby {
+    position: relative;
+    padding-top: 0.6em;
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    margin: 0;
+    border-radius: 0.25em;
+    @media (min-width: 44em) {
+      padding-top: 0;
+      gap: 0.5em;
+    }
+  }
+
+  rt {
+    position: absolute;
+    top: 0.5em;
+    visibility: visible;
+    display: block;
+    width: 100%;
+    font-family: Tahoma;
+    font-weight: normal;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: none;
+    color: var(--font__color--base);
+    opacity: 0.6;
+    @media (min-width: 44em) {
+      position: static;
+      inset: 0;
+    }
+  }
+
+  ruby:hover,
+  ruby:focus {
+    rt {
+      opacity: 1;
+    }
+  }
+}
 
 /****************************
  * Resume Content
@@ -47,11 +127,10 @@ body {
     @media (min-width: 75em) {
       content: '';
       display: block;
-      grid-row: 1;
+      grid-row: 2;
       grid-column: 3;
       width: 2px;
-      height: calc(100% + var(--header__marginBottom, 2rem) + var(--page__padding-bottom));
-      transform: translateY(calc(var(--header__marginBottom) * -1));
+      height: calc(100% + var(--page__padding-bottom));
       align-self: stretch;
       background: var(--c-accent--lighter);
     }
@@ -63,10 +142,11 @@ body {
   display:flex;
   flex-direction: column;
   gap: 4em;
+  padding-top: 2em;
   margin-bottom: 4em;
   @media (min-width: 75em) {
     grid-column: span 2;
-    grid-row: 1;
+    grid-row: 2;
     padding-right: 3em;
     margin-bottom: 0;
   }
@@ -253,8 +333,12 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2em;
   }
+  @media (min-width: 57em) {
+    padding-top: 2em;
+  }
   @media (min-width: 75em) {
-    grid-row: 1;
+    grid-row: 2;
+    grid-column: 3;
     display: block;
     padding-left: 1.5em;
   }
@@ -269,9 +353,10 @@ li:has(.experience-list__more[aria-expanded="true"]) {
   );
   margin-block-end: 0.5em;
   padding-block: 1.5em 1em;
-  padding-inline: calc(var(--page__padding-inline));
+  padding-inline: var(--page__padding-inline);
   font-size: 1.25em;
   color: var(--c-accent);
+  print-color-adjust: exact;
 
   &[class] {
     @media (min-width: 75em) {
@@ -368,8 +453,6 @@ li:has(.experience-list__more[aria-expanded="true"]) {
 
 /*******************************************************
  * Print styles.
- * Inlined to avoid the additional HTTP request:
- * https://www.phpied.com/delay-loading-your-print-css/
  */
 @media print {
   :root {
@@ -416,101 +499,8 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     page-break-inside: avoid;
   }
 
-  .resume {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .resume__header {
-    position: relative;
-    display: grid;
-    grid-template-rows: 1fr -webkit-min-content;
-    grid-template-rows: 1fr min-content;
-    grid-template-columns: -webkit-min-content 1fr 1fr;
-    grid-template-columns: min-content 1fr 1fr;
-    grid-column: 1 / -1;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .resume__header::before,
-  .resume__header::after {
-    content: none;
-  }
-
-  .wordmark,
-  .header__name {
-    padding-top: 3rem;
-  }
-
-  .wordmark {
-    grid-row: 1 / span 2;
-    height: 100%;
-    color: var(--font__color);
-  }
-  .wordmark span {
-    background: transparent;
-  }
-
-  .wordmark::before {
-    content: '';
-  }
-
-  .header__name {
-    grid-row: 1 / span 1;
-    grid-column: 2;
-    height: 100%;
-    padding-left: 2rem;
-    border: 0;
-  }
-
-  .header__name rt {
-    display: inline-block;
-    visibility: visible;
-    margin-left: 0.75em;
-    color: inherit;
-    font-weight: 400;
-  }
-
-  .header__social {
-    justify-self: end;
-    flex-wrap: wrap;
-    grid-column: 3;
-    grid-row: 1 / span 2;
-    gap: 0.75em;
-    font-size: 0.8em;
-  }
-
-  .header__social .icon {
-    display: flex;
-    overflow: visibile;
-    width: auto;
-    height: auto;
-    border-radius: 0;
-    text-decoration: none;
-  }
-
-  .header__social .icon::before {
-    position: static;
-    width: 1.5em;
-    height: 1.5em;
-    margin-right: 0.25em;
-    transform: none;
-  }
-  .header__social .icon::after {
-    content: attr(href);
-    display: block;
-    text-indent: 0;
-  }
-
-  .header__social .icon--email::after {
-    content: 'wesruv@gmail.com';
-  }
-
-  .resume__content-wrapper {
-    grid-column: 1 / span 2;
-    padding-right: 3em;
-    border-right: 1px solid var(--border__color);
+  .resume-section {
+    break-inside: avoid;
   }
 
   .experience-list__date {
@@ -553,9 +543,5 @@ li:has(.experience-list__more[aria-expanded="true"]) {
     left: 0.5em;
     display: block;
     font-size: 0.75em;
-  }
-
-  .page__sidebar {
-    padding-left: 2em;
   }
 }
