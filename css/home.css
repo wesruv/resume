@@ -177,6 +177,13 @@
     font-size: 1.25rem;
   }
 
+  .page__header--fancy & > ul {
+    --link__padding-inline: 1em;
+
+    padding: 0;
+    transform: translate(calc(var(--link__padding-inline) * -1));
+  }
+
   .is-sticky & {
     grid-column: 2;
     grid-row: 1;
@@ -274,6 +281,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
     width: 100%;
     height: var(--mask-size);
     background: var(--c-accent--light);
@@ -287,7 +295,8 @@
   }
 
   img {
-    content: '';
+    position: relative;
+    z-index: 1;
     display: block;
     width: 100%;
     max-width: 350px;
