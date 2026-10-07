@@ -391,18 +391,6 @@ abbr[title] {
     top: 0;
     left: 0;
   }
-
-  .is-sticky & {
-    font-size: 2em;
-    padding-right: 1em;
-    margin-right: 0.5em;
-
-    &::before {
-      content: '';
-      left: auto;
-      transform: skew(12deg);
-    }
-  }
 }
 
 a.wordmark {
@@ -908,13 +896,6 @@ a.wordmark {
       gap: var(--gap);
       overflow: hidden;
     }
-  }
-
-  .page--home__header__content & ul,
-  .page--home &.desktop-only ul {
-    padding-inline: 0;
-    /* Optically align first link with text */
-    margin-inline: calc(var(--link__padding-inline) * -1) 0;
   }
 
   li {

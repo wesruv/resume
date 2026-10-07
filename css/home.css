@@ -72,7 +72,7 @@
   }
 }
 
-.page__header {
+.page__header--fancy {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -88,14 +88,19 @@
     height: 100vh;
     max-height: 45vw; /* Measured in browser */
   }
-  @media (min-width: 57em) {
-  }
   @media (min-width: 75em) {
     grid-column: 2 / -2;
   }
 }
 
-.wordmark {
+.page__header--sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.page__header--fancy .wordmark {
   position: relative;
   grid-row: 1;
   grid-column: 1;
@@ -131,7 +136,7 @@
   }
 }
 
-.header__nav.desktop-only {
+.page__header--fancy .header__nav.desktop-only {
   height: auto;
   font-size: 1em;
 
