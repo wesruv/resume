@@ -315,9 +315,7 @@ abbr[title] {
   width: 100%;
   height: auto;
   background: var(--c-background__greenish);
-  box-shadow: 0 0.25em 3px rgba(var(--crgb-accent--dark), 0.5);
   transition: box-shadow 0.25s ease;
-  /* overflow: hidden; */
 
   &:has(.mobile-menu--expanded) {
     box-shadow: none;
