@@ -136,6 +136,32 @@
   }
 }
 
+.header__nav.desktop-only {
+  height: auto;
+  font-size: 1em;
+
+  ul {
+    overflow: visible;
+  }
+
+  a {
+    @media (min-width: 57em) {
+      padding: 0.3em 0.75em;
+      --link__padding-inline: 0.75em;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0 0 0 2px  var(--c-accent--light);
+      border-radius: 2em;
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
 .header__nav.mobile-tablet-only {
   font-size: 1rem;
   @media (min-width: 35em) {
