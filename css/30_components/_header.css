@@ -212,20 +212,19 @@ a.wordmark {
 
     &:focus rt,
     &:hover rt {
-      visibility: visible;
+      opacity: 1;
     }
 
     rt {
-      visibility: hidden;
+      opacity: 0.5;
       white-space: nowrap;
       color: var(--font__color);
       font-weight: 400;
 
       @media (min-width: 44em) {
         display: inline-block;
-        visibility: visible;
         color: inherit;
-        font-weight: 200;
+        font-weight: 600;
       }
 
       @media (min-width: 57em) {
@@ -480,8 +479,12 @@ a.wordmark {
     display: flex;
     align-items: baseline;
     height: 100%;
-    font-size: 1.25rem;
+    font-size: 1.0625rem;
     font-weight: 400;
+  }
+
+  @media (min-width: 65em) {
+    font-size: 1.25rem;
   }
 
   .page__header--sticky & {

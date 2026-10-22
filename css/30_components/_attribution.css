@@ -29,6 +29,17 @@
   }
 }
 
+.attribution__name,
+.attribution__time,
+.attribution__title {
+  @media (min-width: 44em) {
+    padding-right: 1.5em;
+  }
+  @media (min-width: 57em) {
+    padding-right: 0;
+  }
+}
+
 .attribution__name {
   grid-column: 2;
   align-self: end;

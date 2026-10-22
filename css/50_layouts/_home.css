@@ -138,7 +138,7 @@
 
 .page__header--fancy .header__nav.desktop-only {
   height: auto;
-  font-size: 1em;
+  height: 100%;
 
   ul {
     overflow: visible;
@@ -150,14 +150,29 @@
       --link__padding-inline: 0.75em;
     }
 
-    &:hover,
-    &:focus {
-      box-shadow: inset 0 0 0 2px  var(--c-accent--light);
-      border-radius: 2em;
+    &::before {
+      @media (min-width: 57em) {
+        height: 125%;
+        /* Measured in browser to fall into center and look like it's coming from the right angle */
+        transform: translate(-0.8em, -100%) skew(12deg);
+      }
+      @media (min-width: 75em) {
+        height: 100%;
+        /* Measured in browser to center it */
+        transform: translate(-1em, -100%) skew(12deg);
+      }
     }
 
-    &::before {
-      content: none;
+    &:hover,
+    &:focus {
+      &::before {
+        @media (min-width: 57em) {
+          transform: translate(-0.2em, -50%) skew(12deg);
+        }
+        @media (min-width: 75em) {
+          transform: translate(-0.3em, -50%) skew(12deg);
+        }
+      }
     }
   }
 }
@@ -317,9 +332,10 @@
   }
 
   &[class] rt {
-    font-weight: 200;
+    font-weight: 400;
     @media (min-width: 57em) {
-      visibility: visible;
+      opacity: 1;
+      font-weight: 200;
     }
   }
 }
