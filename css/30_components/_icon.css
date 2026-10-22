@@ -1,0 +1,61 @@
+.icon {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 2.5em;
+  height: 2.5em;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  color: var(--c-accent);
+  text-indent: -9999em;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    background: var(--active-element__background);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    width: 2em;
+    height: auto;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 1.5rem 1.5rem;
+    mask-size: 1.5em 1.5em;
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    background: currentColor;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.icon--email::before {
+  /* Vertically center icon */
+  mask-image: url('/img/email-svgrepo-com.svg');
+}
+
+.icon--github::before {
+  /* Vertically center icon */
+  transform: translate(-50%, -50%) translateY(-1px);
+  mask-image: url('/img/github.svg');
+}
+
+.icon--codepen::before {
+  /* Vertically center icon */
+  transform: translate(-50%, -50%) translateY(-1px);
+  mask-image: url('/img/codepen.svg');
+}
+
+.icon--linkedIn::before {
+  mask-image: url('/img/linkedin.svg');
+}
+
+.icon--download::before {
+  mask-image: url('/img/download.svg');
+}

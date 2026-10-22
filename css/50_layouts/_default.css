@@ -1,0 +1,28 @@
+.page {
+  --font__color: var(--font__color--base);
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100dvh;
+  margin: 0 auto;
+  /* Fixed header height measured in browser */
+  padding-top: 3.8125rem;
+  color: var(--font__color);
+  background: var(--surface__background);
+
+  @media (min-width: 44em) {
+    /* Fixed header height measured in browser */
+    padding-top: 6rem;
+  }
+}
+
+.page__content-wrapper {
+  padding-inline: var(--content__padding-inline);
+  flex-grow: 1;
+  view-transition-name: fade;
+  @media (min-width: 75em) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

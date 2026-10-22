@@ -1,0 +1,57 @@
+/*******************************************************
+ * Vars and Settings
+ * Breakpoints:
+ *   35em
+ *   44em
+ *   57em
+ *   75em
+
+ */
+:root {
+  /* Constants */
+  --crgb-accent: 19, 103, 138;
+  --crgb-accent--dark: 14, 76, 102;
+  --crgb-accent--light: 69, 196, 176;
+  --crgb-accent--lighter: 166, 240, 229;
+  --crgb-accent--light-bright: 82, 255, 229;
+  --crgb-accent--secondary: 154, 235, 163;
+  --crgb-accent--light--text: 8, 149, 128;
+
+  --c-accent: #13678A;
+  --c-accent--dark: #0e4c66;
+  --c-accent--darker: #093243;
+  --c-accent--light: #45C4B0;
+  --c-accent--lighter: #a6f0e5;
+  --c-accent--light-bright: #52ffe5;
+  --c-accent--secondary: #9AEBA3;
+  --c-accent--light--text: #089580;
+
+  --c-background__greenish: #D3FFCF;
+  --c-background__blueish: #ebf9ff;
+
+
+  --c-background__greenish: #D3FFCF;
+  --c-background__blueish: #ebf9ff;
+
+  --border__color: var(--c-accent--light);
+
+  --page__padding-inline: 1rem;
+  --header__marginBottom: 3rem;
+  --content__padding-inline: 1rem;
+  /* Must match media query for .is-sticky header */
+  --content__max-width: 90rem;
+
+  --active-element__background: rgb(from var(--c-accent--secondary) r g b / 0.25);
+  --font__rgb-color--base: 1, 32, 48;
+  --font__color--base: rgb(var(--font__rgb-color--base));
+
+  /* Contextual */
+  --surface__background: #fafafa;
+  --font__color: var(--font__color--base);
+
+  @media (min-width: 44em) {
+    --page__padding-inline: 1.25rem;
+    --header__marginBottom: 3rem;
+    --content__padding-inline: 1.5rem;
+  }
+}

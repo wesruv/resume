@@ -1,0 +1,74 @@
+/*******************************************************
+ * Utility styles
+ */
+
+/**
+ * Hide visually and from screen readers
+ */
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/**
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  /* 1 */
+}
+
+/**
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+  white-space: inherit;
+}
+
+.mobile-only[class][class] {
+  display: var(--display, block);
+  @media (min-width: 35em) {
+    display: none;
+  }
+}
+
+.mobile-tablet-only[class][class] {
+  display: var(--display, block);
+  @media (min-width: 57em) {
+    display: none;
+  }
+}
+
+.tablet-desktop-only[class][class] {
+  display: none;
+  @media (min-width: 35em) {
+    display: var(--display, block);
+  }
+}
+
+.desktop-only[class][class] {
+  display: none;
+  @media (min-width: 57em) {
+    display: var(--display, block);
+  }
+}
+

@@ -8,9 +8,9 @@
   "scripts": {
     "browser-sync": "browser-sync",
     "bs:start": "browser-sync start -s --index='index.html' --port 2099 --no-ui",
-    "bs:watch": "browser-sync start -s --index='index.html' --files='**/*.html, css-dist/**/*.css, **/*.js' --port 2099 --no-ui",
-    "pcss:build": "postcss css/**/*.css --base css --dir css-dist --env production",
-    "pcss:watch": "postcss css/**/*.css --base css --dir css-dist -w"
+    "bs:watch": "browser-sync start -s --index='index.html' --files='*.html, css-dist/**, js/**' --port 2099 --no-ui",
+    "pcss:build": "postcss css/*.css --base css --dir css-dist --env production",
+    "pcss:watch": "postcss css/*.css --base css --dir css-dist -w"
   },
   "devDependencies": {
     "autoprefixer": "^10.6.1",

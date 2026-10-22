@@ -1,0 +1,53 @@
+.header__social {
+  --display: flex;
+
+  position: relative;
+  left: -0.375em;
+  display: var(--display);
+  font-size: 0.75rem;
+  gap: 1em;
+  margin: 0 auto;
+  padding: 1.5em 0 1.5em;
+  list-style: none;
+
+  @media (min-width: 35em) {
+    grid-row: 2;
+    grid-column: 2;
+    margin: 0;
+    padding: 0;
+  }
+  @media (min-width: 44em) {
+    font-size: 0.875rem;
+    grid-column: 2 / span 1;
+  }
+  @media (min-width: 57em) {
+    align-self: center;
+    justify-self: end;
+    grid-row: 1;
+    grid-column: 3 / span 1;
+    padding-top: 1em;
+    padding-left: 0;
+  }
+
+  .is-sticky & {
+    align-self: center;
+    top: auto;
+    left: auto;
+    gap: 0.75em;
+    margin-left: auto;
+    padding: 0;
+  }
+
+  .mobile-menu__dropdown--active & {
+    inset: auto;
+    margin-inline: auto;
+  }
+
+  a:hover {
+    box-shadow: 0 0 0 2px var(--c-accent--light);
+  }
+}
+
+.contact-link--email {
+  margin-right: auto;
+}

@@ -1,0 +1,9 @@
+.footer {
+  padding: 0.75em calc(var(--page__padding-inline) * 3);
+  border-top: 4px solid var(--c-accent--light);
+  font-size: 0.75em;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  background: var(--c-accent);
+}
