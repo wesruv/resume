@@ -85,7 +85,9 @@
     display: block;
     width: 100%;
     height: 100%;
+  }
 
+  img {
     .js & {
       mask-image: url(/img/geetar-mask.png);
       mask-position: center bottom;
@@ -101,7 +103,7 @@
     z-index: -2;
     background: url(/img/infaltable-geetar-electric-green.jpg);
     background-size: cover;
-    mask-composite: subtract;
+    mask-image: none;
     opacity: 0;
     transition: opacity 3s ease;
   }
@@ -177,6 +179,5 @@
     left: 150%;
     width: 1px;
     height: 1px;
-    background: red;
   }
 }

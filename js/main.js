@@ -73,7 +73,9 @@
     makeMoreButtonWork();
   });
 
-  window.addEventListener('load', () => htmlElement.classList.add('loaded'));
+  window.addEventListener('load', () =>
+    setTimeout(() => htmlElement.classList.add('loaded'), 100)
+  );
 
   /**
    * Setup an element to be an expandable

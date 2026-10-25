@@ -640,7 +640,6 @@ abbr[title] {
 .page__header--sticky[class][class] {
     grid-template-columns: min-content 1fr min-content;
     grid-column: 1 / -1;
-    align-items: baseline;
     width: 100%;
     padding: 0 var(--page__padding-inline)
 }
@@ -1116,7 +1115,6 @@ a.wordmark:hover span, a.wordmark:focus span {
 
 .header__nav {
     display: flex;
-    align-items: baseline;
     height: 100%;
     font-size: 1.0625rem;
     font-weight: 400
@@ -1161,7 +1159,6 @@ a.wordmark:hover span, a.wordmark:focus span {
 
 .header__nav ul {
       display: flex;
-      align-items: baseline;
       height: 100%;
       gap: var(--gap);
       overflow: hidden
@@ -1184,7 +1181,6 @@ a.wordmark:hover span, a.wordmark:focus span {
 
 .header__nav li {
       display: flex;
-      align-items: baseline;
       height: 100%
   }
     }
@@ -1203,7 +1199,6 @@ a.wordmark:hover span, a.wordmark:focus span {
 
 .header__nav a {
       display: flex;
-      align-items: baseline;
       padding-top: 2em;
       height: 100%;
       outline: 0;
@@ -1731,7 +1726,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: var(--header__marginBottom, 2rem);
+  /* Added rem is measured height of fixed header */
+  padding-top: calc(var(--header__marginBottom, 2rem) + 6.0625rem);
   padding-bottom: var(--page__padding-bottom);
 }
 @media (min-width: 57em) {
