@@ -145,6 +145,7 @@
   }
 
   a {
+    align-items: center;
     @media (min-width: 57em) {
       padding: 0.3em 0.75em;
       --link__padding-inline: 0.75em;
