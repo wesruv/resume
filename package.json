@@ -10,7 +10,8 @@
     "bs:watch": "browser-sync start -s --index='index.html' --files='*.html, css-dist/**, js/**' --port 2099 --no-ui",
     "css:build:dev": "node scripts/build-css.js",
     "css:build": "node scripts/build-css.js --production",
-    "css:watch": "node scripts/build-css.js --watch"
+    "css:watch": "node scripts/build-css.js --watch",
+    "build": "css:build"
   },
   "devDependencies": {
     "autoprefixer": "^10.6.1",

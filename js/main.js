@@ -67,12 +67,13 @@
     );
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('DOMContentLoaded', () => {
     enableBurger();
     addScrollListener();
     makeMoreButtonWork();
   });
 
+  window.addEventListener('load', () => htmlElement.classList.add('loaded'));
 
   /**
    * Setup an element to be an expandable
