@@ -587,13 +587,18 @@ a.wordmark {
       }
     }
 
-
     .page__header--sticky & {
       display: flex;
       align-items: end;
       @media (min-width: 57em) {
+        padding-top: 0;
         /* Measured in browser to align baseline of logo */
-        padding-bottom: 0.8em;
+        padding-bottom: 1.49em;
+      }
+      @media (min-width: 75em) {
+        text-indent: 0.15em;
+        /* Measured in browser to align baseline of logo */
+        padding-bottom: 1.205em;
       }
     }
   }

@@ -917,18 +917,14 @@ a.wordmark:hover span, a.wordmark:focus span {
   transform: scale(calc(1 / var(--burger__scaling)));
   transform-origin: left top;
   transition: transform 0.25s ease;
-
-  /* Basic setup for the two elements that make the icon */
-
-  /* Hamburger top bar - Closed/default */
-
-  /* Hamburger bottom bar - Closed/default */
 }
 
 [aria-expanded="true"] .burger__icon {
     /* Translate was measured in browser to center align the X */
     transform: scale(calc(1 / var(--burger__scaling))) translate(1.5em);
   }
+
+/* Basic setup for the two elements that make the icon */
 
 .burger__icon::before,
   .burger__icon::after {
@@ -940,6 +936,8 @@ a.wordmark:hover span, a.wordmark:focus span {
     display: block;
     width: var(--burger__bar-width--scaled);
   }
+
+/* Hamburger top bar - Closed/default */
 
 .burger__icon::before {
     --burger__transform-origin: left top;
@@ -959,6 +957,8 @@ a.wordmark:hover span, a.wordmark:focus span {
       transition: transform var(--burger__animation-duration) var(--burger__animation-timing)
   }
     }
+
+/* Hamburger bottom bar - Closed/default */
 
 .burger__icon::after {
     --burger__height: calc(var(--burger__bar-height--scaled) * 2 + var(--burger__space-between-bars--scaled));
@@ -983,16 +983,14 @@ a.wordmark:hover span, a.wordmark:focus span {
   }
     }
 
-[aria-expanded="true"] .burger__icon {
-    /* Hamburger bottom bar - Open Menu */
-  }
-
 [aria-expanded="true"] .burger__icon:before {
       border-top-color: var(--burger__bar-color);
       transform:
         rotate(45deg);
       transform-origin: var(--burger__transform-origin);
     }
+
+/* Hamburger bottom bar - Open Menu */
 
 [aria-expanded="true"] .burger__icon:after {
       border-top-color: transparent;
@@ -1288,8 +1286,20 @@ a.wordmark:hover span, a.wordmark:focus span {
 
 
 .page__header--sticky .header__nav a {
+        padding-top: 0;
         /* Measured in browser to align baseline of logo */
-        padding-bottom: 0.8em
+        padding-bottom: 1.49em
+    }
+      }
+
+
+@media (min-width: 75em) {
+
+
+.page__header--sticky .header__nav a {
+        text-indent: 0.15em;
+        /* Measured in browser to align baseline of logo */
+        padding-bottom: 1.205em
     }
       }
 
@@ -1356,6 +1366,10 @@ a.wordmark:hover span, a.wordmark:focus span {
 .mobile-menu__dropdown--active .header__social {
     inset: auto;
     margin-inline: auto;
+  }
+
+.header__social a {
+    transition: box-shadow 0.25s;
   }
 
 .header__social a:hover {
@@ -1539,18 +1553,19 @@ a.wordmark:hover span, a.wordmark:focus span {
 .work-example > ul,
 .previous-talk__info-wrapper > ul,
 .experience-list > li > .experience-list__details,
-.experience-list__subsection ul {
+.experience-list__subsection ul,
+.recommendation__content ul {
   -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
 }
-.work-example > ul li, .previous-talk__info-wrapper > ul li, .experience-list > li > .experience-list__details li, .experience-list__subsection ul li {
+.work-example > ul li, .previous-talk__info-wrapper > ul li, .experience-list > li > .experience-list__details li, .experience-list__subsection ul li, .recommendation__content ul li {
     margin-bottom: 0.25em;
   }
-.work-example > ul li, .previous-talk__info-wrapper > ul li, .experience-list > li > .experience-list__details li, .experience-list__subsection ul li {
+.work-example > ul li, .previous-talk__info-wrapper > ul li, .experience-list > li > .experience-list__details li, .experience-list__subsection ul li, .recommendation__content ul li {
     list-style: none;
     position: relative;
   }
-.work-example > ul li::before, .previous-talk__info-wrapper > ul li::before, .experience-list > li > .experience-list__details li::before, .experience-list__subsection ul li::before {
+.work-example > ul li::before, .previous-talk__info-wrapper > ul li::before, .experience-list > li > .experience-list__details li::before, .experience-list__subsection ul li::before, .recommendation__content ul li::before {
       content: '';
       position: absolute;
       top: 0.75em;
@@ -1562,7 +1577,7 @@ a.wordmark:hover span, a.wordmark:focus span {
       background: var(--c-accent--light);
       transform: skew(12deg) translate(0, -0.15em);
     }
-.work-example > ul li > ul > li::before, .previous-talk__info-wrapper > ul li > ul > li::before, .experience-list > li > .experience-list__details li > ul > li::before, .experience-list__subsection ul li > ul > li::before {
+.work-example > ul li > ul > li::before, .previous-talk__info-wrapper > ul li > ul > li::before, .experience-list > li > .experience-list__details li > ul > li::before, .experience-list__subsection ul li > ul > li::before, .recommendation__content ul li > ul > li::before {
       width: 0.25em;
       height: 0.25em;
       border: 2px solid var(--c-accent--light);

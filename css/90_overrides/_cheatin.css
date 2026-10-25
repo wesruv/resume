@@ -2,7 +2,8 @@
 .work-example > ul,
 .previous-talk__info-wrapper > ul,
 .experience-list > li > .experience-list__details,
-.experience-list__subsection ul {
+.experience-list__subsection ul,
+.recommendation__content ul {
   print-color-adjust: exact;
   li {
     margin-bottom: 0.25em;
