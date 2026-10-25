@@ -2,23 +2,22 @@
   "name": "wes-resume",
   "version": "0.0.1",
   "description": "",
-  "keywords": "",
   "license": "",
-  "author": "",
+  "author": "wesruv",
   "scripts": {
     "browser-sync": "browser-sync",
     "bs:start": "browser-sync start -s --index='index.html' --port 2099 --no-ui",
     "bs:watch": "browser-sync start -s --index='index.html' --files='*.html, css-dist/**, js/**' --port 2099 --no-ui",
-    "pcss:build": "postcss css/*.css --base css --dir css-dist --env production",
-    "pcss:watch": "postcss css/*.css --base css --dir css-dist -w"
+    "css:build:dev": "node scripts/build-css.js",
+    "css:build": "node scripts/build-css.js --production",
+    "css:watch": "node scripts/build-css.js --watch"
   },
   "devDependencies": {
     "autoprefixer": "^10.6.1",
-    "browser-sync": "^2.27.11",
+    "browser-sync": "^3.0.4",
     "cssnano": "^9.9.0",
     "postcss": "^8.5.31",
-    "postcss-cli": "^12.0.0",
-    "postcss-import": "^16.2.0",
+    "postcss-import": "^17.0.1",
     "postcss-nested": "^9.0.1"
   }
 }
