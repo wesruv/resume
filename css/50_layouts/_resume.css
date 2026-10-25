@@ -116,7 +116,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: var(--header__marginBottom, 2rem);
+  /* Added rem is measured height of fixed header */
+  padding-top: calc(var(--header__marginBottom, 2rem) + 6.0625rem);
   padding-bottom: var(--page__padding-bottom);
   @media (min-width: 57em) {
     display: grid;

@@ -44,7 +44,6 @@
   @media (min-width: 57em) {
     grid-template-columns: min-content 1fr min-content;
     grid-column: 1 / -1;
-    align-items: baseline;
     width: 100%;
     padding: 0 var(--page__padding-inline);
   }
@@ -477,7 +476,6 @@ a.wordmark {
 .header__nav {
   @media (min-width: 57em) {
     display: flex;
-    align-items: baseline;
     height: 100%;
     font-size: 1.0625rem;
     font-weight: 400;
@@ -506,7 +504,6 @@ a.wordmark {
     list-style: none;
     @media (min-width: 57em) {
       display: flex;
-      align-items: baseline;
       height: 100%;
       gap: var(--gap);
       overflow: hidden;
@@ -520,7 +517,6 @@ a.wordmark {
     }
     @media (min-width: 57em) {
       display: flex;
-      align-items: baseline;
       height: 100%;
     }
   }
@@ -532,7 +528,6 @@ a.wordmark {
     border-radius: 0;
     @media (min-width: 57em) {
       display: flex;
-      align-items: baseline;
       padding-top: 2em;
       height: 100%;
       outline: 0;
