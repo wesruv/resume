@@ -1,3 +1,41 @@
+@keyframes me-n-my-geetar__bg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes me-n-my-geetar__bars {
+  0% {
+    transform: rotate(30deg) translate(30%);
+    transform-origin: left bottom;
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(30deg);
+    transform-origin: left bottom;
+    opacity: 1;
+  }
+}
+
+@keyframes me-n-my-geetar__rays {
+  from {
+    transform: rotate(-12deg);
+    transform-origin: 190% 200%;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    transform-origin: 190% 200%;
+  }
+}
+
 
 .me-n-my-geetar {
   /* Image dimensions */
@@ -56,6 +94,10 @@
       content: none;
     }
   }
+
+  &:hover {
+    transform: rotate(2deg);
+  }
 }
 
 .me-n-my-geetar__inner {
@@ -105,12 +147,15 @@
     background-size: cover;
     mask-image: none;
     opacity: 0;
-    transition: opacity 3s ease;
   }
 
   .no-js &::before,
   .loaded &::before {
-    opacity: 1;
+    animation: me-n-my-geetar__bg 2s ease forwards;
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+      opacity: 1;
+    }
   }
 
   &::after {
@@ -128,21 +173,32 @@
       transparent 50%,
       transparent 100%
     );
-    background-size: auto 15%;
+    background-size: auto 16.6667%;
     background-repeat: repeat;
     transform: rotate(30deg) translate(30%);
     transform-origin: left bottom;
-    transition:
-      transform 1.5s ease-in-out,
-      opacity 1s ease-out;
     opacity: 0;
+  }
+
+  .me-n-my-geetar:hover &::after {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 50%,
+      #9768D2 50%,
+      #9768D2 100%
+    );
   }
 
   .no-js &::after,
   .js.loaded &::after {
-    opacity: 1;
-    transform: rotate(30deg);
-    transform-origin: left bottom;
+    animation: me-n-my-geetar__bars 2s ease-in-out forwards;
+    @media (prefers-reduced-motion: reduce) {
+      opacity: 1;
+      transform: rotate(30deg);
+      transform-origin: left bottom;
+    }
+
   }
 }
 
@@ -168,16 +224,16 @@
 
   .no-js &::before,
   .loaded &::before {
-    opacity: 1;
-    transform: none;
+    animation: me-n-my-geetar__rays 1.5s 1s ease forwards;
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 150%;
-    width: 1px;
-    height: 1px;
+  .loaded .me-n-my-geetar:hover &::before {
+    top: 2px;
+    left: 2px;
   }
 }

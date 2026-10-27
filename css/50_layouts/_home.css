@@ -137,8 +137,14 @@
 }
 
 .page__header--fancy .header__nav.desktop-only {
+  --link__padding-inline: 0.75em;
+
   height: auto;
   height: 100%;
+  @media (min-width: 57em) {
+    position: relative;
+    left: calc(var(--link__padding-inline) * -2);
+  }
 
   ul {
     overflow: visible;
@@ -148,7 +154,6 @@
     align-items: center;
     @media (min-width: 57em) {
       padding: 0.3em 0.75em;
-      --link__padding-inline: 0.75em;
     }
 
     &::before {
