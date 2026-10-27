@@ -94,10 +94,6 @@
       content: none;
     }
   }
-
-  &:hover {
-    transform: rotate(2deg);
-  }
 }
 
 .me-n-my-geetar__inner {
@@ -116,6 +112,10 @@
     max-width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+
+  .me-n-my-geetar:hover & {
+    transform: rotate(2deg);
   }
 
   &::before,
