@@ -155,12 +155,12 @@
       @media (min-width: 57em) {
         height: 125%;
         /* Measured in browser to fall into center and look like it's coming from the right angle */
-        transform: translate(-0.8em, -100%) skew(12deg);
+        transform: translate(-1em, -100%) skew(12deg);
       }
       @media (min-width: 75em) {
         height: 100%;
         /* Measured in browser to center it */
-        transform: translate(-1em, -100%) skew(12deg);
+        transform: translate(-1.3em, -100%) skew(12deg);
       }
     }
 
@@ -168,10 +168,10 @@
     &:focus {
       &::before {
         @media (min-width: 57em) {
-          transform: translate(-0.2em, -50%) skew(12deg);
+          transform: translate(-0.15em, -25%) skew(12deg);
         }
         @media (min-width: 75em) {
-          transform: translate(-0.3em, -50%) skew(12deg);
+          transform: translate(-0.25em, -20%) skew(12deg);
         }
       }
     }

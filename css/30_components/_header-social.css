@@ -43,6 +43,10 @@
     margin-inline: auto;
   }
 
+  a {
+    transition: box-shadow 0.25s;
+  }
+
   a:hover {
     box-shadow: 0 0 0 2px var(--c-accent--light);
   }
