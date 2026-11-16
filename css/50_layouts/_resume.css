@@ -16,6 +16,7 @@ body {
   color: var(--font__color);
   background: var(--surface__background);
   max-width: 80rem;
+  padding-inline: var(--page__padding-inline);
   @media (min-width: 57em) {
     padding-inline: calc(var(--page__padding-inline) * 2);
   }
@@ -117,8 +118,11 @@ body {
   flex-direction: column;
   width: 100%;
   /* Added rem is measured height of fixed header */
-  padding-top: calc(var(--header__marginBottom, 2rem) + 6.0625rem);
+  padding-top: calc(var(--header__marginBottom, 2rem) + 3.9375rem);
   padding-bottom: var(--page__padding-bottom);
+  @media (min-width: 44em) {
+    padding-top: calc(var(--header__marginBottom, 2rem) + 6.0625rem);
+  }
   @media (min-width: 57em) {
     display: grid;
     grid-template-columns: subgrid;
