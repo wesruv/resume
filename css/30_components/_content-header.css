@@ -12,9 +12,8 @@
     bottom: 0;
     z-index: -1;
     display: block;
-    width: auto;
+    width: 800vw;
     height: 200%;
-    aspect-ratio: 3 / 1;
     transform: skew(12deg) translate(-50%, -50%);
     transform-origin: left bottom;
     border-radius: 50%;
@@ -25,12 +24,9 @@
       var(--surface__background) calc(50% + 5em)
     );
     background-position: center center;
-    @media (min-width: 44em) {
-      transform: skew(12deg) translate(-40%, -50%);
-      transform-origin: left bottom;
-      width: 300vw;
+    @media (min-width: 35em) {
+      width: 400vw;
       height: 200%;
-      aspect-ratio: 6 / 1;
     }
   }
 

@@ -10,7 +10,7 @@ Senior Front-end Dev - UX / Accessibility / Performance
 * Full stack engineer at Giant Rabbit, a non-profit focused agency, on a wide array of tech stacks (e.g. Wordpress, Drupal, Backdrop CMS, React, Vue.js, Solid.js, Typescript)
 * Redesigned and rebuilt Oregon Law Help's Guided Help tool
   * Led discovery client to identify goals, concerns, and the shortcomings of the app
-  * Fixed issues accessibility, form design, and the vibe coded Vue.js
+  * Identified and fixed issues accessibility (WCAG 2.2 AA), form design, and the vibe coded Vue.js
 * Designed and built custom dashboard for UC College of Law, San Francisco
 * Built Environmental Grantmakers website on Drupal 10 and CiviCRM
 
@@ -24,7 +24,7 @@ Senior Front-end Dev - UX / Accessibility / Performance
 **Senior Front-end Developer**       01/2020 - 12/2021
 * Recognized as a 'Top 150 Premier Technical Contributors' for 2023
 * Floating front-end dev SME contributing to customer facing Drupal, React, Vue, Typescript, and Angular projects with Drupal, GraphQL, and custom backends.
-* Created and maintained Main Navigation web component used on all Red Hat web sites, providing accessibility, analytics, and consistent functionality across all web properties
+* Created and maintained Main Navigation web component used on all Red Hat web sites, providing accessibility (WCAG 2.2 AA), analytics, and consistent functionality across all web properties
 
 ## Lullabot
 **Senior Front-end Developer**     08/2016 - 12/2019
