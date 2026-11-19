@@ -48,6 +48,7 @@
   margin-left: calc(var(--page__padding-inline) * -1);
   padding-top: 4em;
   background: var(--c-accent);
+  background-image: var(--me-n-my-geetar__gradient);
   mask-image: url(/img/wave-fill.svg);
   mask-size: var(--mask-size);
   mask-position: center top;
@@ -114,10 +115,6 @@
     object-fit: contain;
   }
 
-  .me-n-my-geetar:hover & {
-    transform: rotate(2deg);
-  }
-
   &::before,
   img {
     grid-column: 1;
@@ -143,7 +140,7 @@
     bottom: 0;
     right: 0;
     z-index: -2;
-    background: url(/img/infaltable-geetar-electric-green.jpg);
+    background: url(/img/green-ellipsoid.png);
     background-size: cover;
     mask-image: none;
     opacity: 0;
@@ -163,6 +160,7 @@
     position: absolute;
     left: 0;
     top: 39%;
+    z-index: -1;
     display: block;
     width: 30%;
     aspect-ratio: 1 / 1;
@@ -231,9 +229,28 @@
       transform: none;
     }
   }
-
-  .loaded .me-n-my-geetar:hover &::before {
-    top: 2px;
-    left: 2px;
-  }
 }
+
+/* Best dancing effect you've ever seen */
+.loaded .me-n-my-geetar:hover {
+  .me-n-my-geetar__inner {
+    /* Makes sure there isn't a gap at the bottom on rotate */
+    transform: translateY(1%) rotate(2deg);
+
+    /* Green ellipsoid */
+    &::before {
+      /* Keep it in place */
+      transform: translateY(-1%) rotate(-2deg);
+    }
+  }
+
+  .me-n-my-geetar__inner-2 {
+    /* Change the rays without messing up their animation (which depends on rotate) */
+    transform: rotate(-3deg) translate(1%, 1%);
+    img {
+      transform: rotate(3deg);
+    }
+  }
+
+}
+

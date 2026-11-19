@@ -93,11 +93,23 @@
     display: block;
     width: calc(100% + 5rem);
     height: 100%;
-    background: var(--c-accent) 35%;
+    background: var(--c-accent);
     border-right: 0.5em solid var(--c-accent--light);
     transform: skewX(12deg) translateX(-5rem);
     transform-origin: right bottom;
   }
+}
+
+:where(.page--home) .page__header {
+  --me-n-my-geetar__gradient: linear-gradient(
+      165deg, /* Measured in browser, top left light) */
+      var(--c-accent) 60%,
+      var(--c-accent--dark) 80%
+    );
+
+    &::before {
+      background-image: var(--me-n-my-geetar__gradient);
+    }
 }
 
 .wordmark,
